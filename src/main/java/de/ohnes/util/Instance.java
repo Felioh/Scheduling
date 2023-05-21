@@ -1,23 +1,23 @@
 package de.ohnes.util;
 
-import java.util.List;
-
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
+@AllArgsConstructor
 public class Instance {
 
-    private List<Job> jobs;
+    private Job[] jobs;
 
-    private List<Machine> machines;
+    private Machine[] machines;
 
     public int getN() {
-        return jobs.size();
+        return jobs.length;
     }
     
     public int getM() {
-        return machines.size();
+        return machines.length;
     }
 }

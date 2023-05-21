@@ -13,7 +13,7 @@ public class TransformInstance {
      * @param I the instance to be transformed.
      * @param lambda
      */
-    public void transformInstance(Instance I, final double lambda) {
+    public static void transformInstance(Instance I, final double lambda) {
 
     }
 }
