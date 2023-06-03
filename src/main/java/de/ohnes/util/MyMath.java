@@ -7,7 +7,7 @@ public class MyMath {
      * assuming that @n and @target >= 0.
      */
     public static double roundUp(double n, double target) {
-        return target * Math.floor((n + 0.5f * target) / target);
+        return target * Math.ceil(n / target);
     }
     
 }
