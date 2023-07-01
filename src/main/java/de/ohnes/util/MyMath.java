@@ -24,11 +24,11 @@ public class MyMath {
      * @param delta
      * @return
      */
-    public static Interval[] getLoadIntervals(double epsilon, double delta) {
+    public static Interval[] getLoadIntervals(double epsilon, double delta, double max) {
         List<Interval> res = new ArrayList<>();
         double lower = 0;
         double upper = 0;
-        while (upper < 2) {
+        while (upper < max) {
             res.add(new Interval(lower, upper));
             if (lower == 0) {
                 lower = epsilon;

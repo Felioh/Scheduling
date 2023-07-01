@@ -4,6 +4,6 @@ import de.ohnes.util.Instance;
 
 public interface Algorithm {
 
-    public void solve(Instance I, double epsilon);
+    public void solve(Instance I, double epsilon, int q);
     
 }

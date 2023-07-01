@@ -1,6 +1,8 @@
 package de.ohnes.util;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Set;
 import java.util.Map.Entry;
 
@@ -48,14 +50,25 @@ public class State {
             }
         }
         HashMap<Job, Integer> newAllotments = new HashMap<>();
-        Set<Entry<Job, Integer>> entries = this.allotments.entrySet();
-        for (Entry<Job, Integer> entry : entries) {
+        for (Entry<Job, Integer> entry : this.allotments.entrySet()) {
             newAllotments.put(entry.getKey(), entry.getValue());
         }
         newAllotments.put(job, id);
         newState.setAllotments(newAllotments);
 
         return newState;
+    }
+
+    /**
+     * return the cost of this State (\sum{(L_i)^q})
+     * @return
+     */
+    public double getCost(int q) {
+        double res = 0;
+        for (double l : this.loads) {
+            res += Math.pow(l, q);
+        }
+        return res;
     }
     
 }

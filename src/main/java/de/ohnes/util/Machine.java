@@ -21,4 +21,8 @@ public class Machine {
     public double getLoad() {
         return jobs.stream().map(j -> j.getP()).mapToDouble(Double::doubleValue).sum();
     }
+
+    public int getNumberAssignedJobs() {
+        return jobs.size();
+    }
 }

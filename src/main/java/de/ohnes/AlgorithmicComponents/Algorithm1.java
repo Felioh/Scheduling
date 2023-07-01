@@ -1,8 +1,15 @@
 package de.ohnes.AlgorithmicComponents;
 
+import java.util.Arrays;
+import java.util.Map.Entry;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import de.ohnes.util.Instance;
 import de.ohnes.util.Interval;
 import de.ohnes.util.Job;
+import de.ohnes.util.Machine;
 import de.ohnes.util.MyMath;
 import de.ohnes.util.State;
 import de.ohnes.util.States;
@@ -12,14 +19,20 @@ import de.ohnes.util.States;
  */
 public class Algorithm1 implements Algorithm {
 
+        private static final Logger LOGGER = LogManager.getLogger(Algorithm1.class);
+
+
     @Override
-    public void solve(Instance I, double epsilon) {
+    public void solve(Instance I, double epsilon, int q) {
+
+        double L = Arrays.stream(I.getJobs()).map(Job::getP).mapToDouble(Double::doubleValue).sum() / I.getM();
 
         double delta = epsilon / I.getN();
 
-        Interval[] big_gamma = MyMath.getLoadIntervals(epsilon, delta);
+        Interval[] big_gamma = MyMath.getLoadIntervals(epsilon, delta, 2 * L);
         
         Job[] jobs = I.getJobs();
+
 
         States[] F_hat = new States[I.getN()];
         //initialization, maybe not needed?
@@ -33,7 +46,7 @@ public class Algorithm1 implements Algorithm {
 
             for (State prevState : F_hat[j - 1].getStates()) {
                 for (int i = 1; i <= I.getM(); i++) {
-                    if (prevState.getLoad(i) + jobs[j-1].getP() > 2) {  //L_i + p_j <= 2
+                    if (prevState.getLoad(i) + jobs[j-1].getP() > 2 * L) {  //L_i + p_j <= 2
                         continue;
                     }
                     F_prime_j.add(prevState.getNextState(i, jobs[j-1]));
@@ -60,7 +73,27 @@ public class Algorithm1 implements Algorithm {
         }
 
         //find the allotment with minimum objective. in F_hat_n
-        
+        double minOb = Double.MAX_VALUE;
+        State minState = null;
+        for (State state : F_hat[I.getN() - 1].getStates()) {
+            double ob = state.getCost(q);
+            if (ob < minOb) {
+                minOb = ob;
+                minState = state;
+            }
+        }
+
+        //rebuild the solution
+        LOGGER.info("Found solution with objective value {}", minOb);
+
+        Machine[] machines = I.getMachines();
+        for (int i = 1; i <= I.getM(); i++) {
+            for (Entry<Job, Integer> entry : minState.getAllotments().entrySet()) {
+                if (entry.getValue() == i) {
+                    machines[i - 1].addJob(entry.getKey());
+                }
+            }
+        }
     }
     
 }
