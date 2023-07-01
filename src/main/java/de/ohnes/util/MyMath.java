@@ -3,6 +3,7 @@ package de.ohnes.util;
 import java.lang.reflect.Array;
 import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Deque;
 import java.util.HashSet;
 import java.util.List;
@@ -65,8 +66,31 @@ public class MyMath {
         if (intervals.length != loads.length) {
             return false; //this should not happen.
         }
-        //TODO !!
+        for (int i = 0; i < intervals.length; i++) {
+            if (!intervals[i].contains(i)) {
+                return false;
+            }
+        }
         return true;
+    }
+
+    public static <T> List<T[]> getPermutationsOfLength(T[] list, int length, Class<T> clazz) {
+        List<T[]> res = new ArrayList<>();
+        recursiveGetPermutations(list, (T[]) Array.newInstance(clazz, 0), res, length);
+        return res;
+    }
+
+    private static <T> void recursiveGetPermutations(T[] list, T[] tmp, List<T[]> res, int length) {
+        if (tmp.length == length) {
+            res.add(tmp);
+            return;
+        }
+
+        for (T element : list) {
+            T[] tmp_new = Arrays.copyOf(tmp, tmp.length + 1);
+            tmp_new[tmp_new.length - 1] = element;
+            recursiveGetPermutations(list, tmp_new, res, length);
+        }
     }
     
 }

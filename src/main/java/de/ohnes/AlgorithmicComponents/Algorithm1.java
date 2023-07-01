@@ -1,7 +1,5 @@
 package de.ohnes.AlgorithmicComponents;
 
-import java.util.HashSet;
-
 import de.ohnes.util.Instance;
 import de.ohnes.util.Interval;
 import de.ohnes.util.Job;
@@ -35,28 +33,34 @@ public class Algorithm1 implements Algorithm {
 
             for (State prevState : F_hat[j - 1].getStates()) {
                 for (int i = 1; i <= I.getM(); i++) {
-                    double p_j = jobs[j-1].getP();
-                    if (prevState.getLoad(i) + p_j > 2) {  //L_i + p_j <= 2
+                    if (prevState.getLoad(i) + jobs[j-1].getP() > 2) {  //L_i + p_j <= 2
                         continue;
                     }
-                    F_prime_j.add(prevState.getNextState(i, p_j));
+                    F_prime_j.add(prevState.getNextState(i, jobs[j-1]));
                 }
             }
 
-            for (Interval[] S : MyMath.findPowerSet(big_gamma, Interval.class)) {
-                State newState = new State(j, I.getM());
+            for (Interval[] S : MyMath.getPermutationsOfLength(big_gamma, I.getM(), Interval.class)) {
+                State roundedState = new State(j, I.getM());
                 for (int i = 1; i <= I.getM(); i++) {
                     //L_i = max{L_i : (..., L_i, ...) \in F' \cut S}
                     //find the maximum L in the cut of F and S
+                    double L_max = 0; //0 is the minimum.
                     for (State state : F_prime_j.getStates()) {
-                        //TODO !!
+                        if (MyMath.isInCut(S, state.getLoads())) {
+                            if (state.getLoad(i) > L_max) {
+                                L_max = state.getLoad(i);
+                            }
+                        }
                     }
+                    roundedState.setLoad(i, L_max);
                 }
-                F_hat[j].add(newState);
+                F_hat[j].add(roundedState);
             }
         }
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'solve'");
+
+        //find the allotment with minimum objective. in F_hat_n
+        
     }
     
 }

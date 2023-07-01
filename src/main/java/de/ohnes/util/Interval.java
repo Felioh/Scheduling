@@ -9,7 +9,7 @@ public class Interval {
 
     private double end;
 
-    public boolean isIncluded(double n) {
+    public boolean contains(double n) {
         return n >= this.begin && n < end;
     }
 }

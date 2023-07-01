@@ -5,6 +5,7 @@ import static org.junit.Assert.assertEquals;
 import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.HashSet;
+import java.util.List;
 
 import org.junit.Test;
 
@@ -39,6 +40,16 @@ public class MyMathTests {
 
         HashSet<Integer[]> res = MyMath.findPowerSet(source, Integer.class);
         
+        //TODO !!
+    }
+
+    @Test
+    public void testPermutations() {
+
+        Integer[] source = {1, 2, 3};
+
+        List<Integer[]> res = MyMath.getPermutationsOfLength(source, 2, Integer.class);
+
         //TODO !!
     }
 }
