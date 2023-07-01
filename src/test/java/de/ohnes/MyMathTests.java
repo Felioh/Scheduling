@@ -2,7 +2,13 @@ package de.ohnes;
 
 import static org.junit.Assert.assertEquals;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
+import java.util.HashSet;
+
 import org.junit.Test;
+
+import de.ohnes.util.Interval;
 import de.ohnes.util.MyMath;
 
 public class MyMathTests {
@@ -23,5 +29,16 @@ public class MyMathTests {
 
         assertEquals("The rounded up value should equal 40", 40, MyMath.roundUp(n, target), 0.00001);
 
+    }
+
+    @Test
+    public void testFindPowerset() {
+        Deque<Integer> target = new ArrayDeque<>();
+
+        Integer[] source = {1, 2, 3};
+
+        HashSet<Integer[]> res = MyMath.findPowerSet(source, Integer.class);
+        
+        //TODO !!
     }
 }

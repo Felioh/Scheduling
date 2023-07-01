@@ -26,7 +26,7 @@ public class App {
         //TODO
         Instance I = InstanceGenerator.generate(1, 3, 1, 3, 10);
 
-        TransformInstance.transformInstance(I, 1);
+        TransformInstance.transformInstance(I, (int) (1 / 0.1));
 
         LOGGER.info("END");
     }

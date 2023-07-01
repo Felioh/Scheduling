@@ -60,7 +60,7 @@ public class TransformInstance {
             machines[i] = new Machine();
         }
         I.setMachines(machines);
-        I.setJobs(newJobs.toArray(Job[]::new));
+        I.setJobs(newJobs.toArray(new Job[0]));
     }
 
     private static boolean containsBigJobs(List<Job> jobs, final double L) {
