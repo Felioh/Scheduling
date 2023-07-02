@@ -9,7 +9,6 @@ import java.util.HashSet;
 import java.util.List;
 
 import org.junit.Test;
-import org.omg.CORBA.INITIALIZE;
 
 import de.ohnes.util.Interval;
 import de.ohnes.util.MyMath;
