@@ -1,10 +1,7 @@
 package de.ohnes.util;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Set;
-import java.util.Map.Entry;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -17,23 +14,39 @@ public class State {
     private int h;
     
     @Setter
-    private HashMap<Job, Integer> allotments = new HashMap<>();
+    private List<List<Job>> allotments;
+    // private HashMap<Job, Integer> allotments = new HashMap<>();
 
     public State(int h, int m) {
         this.loads = new double[m];
         this.h = h;
+        this.allotments = new ArrayList<>(m);
+        for (int i = 0; i < m; i++) {
+            this.allotments.add(i, new ArrayList<>());
+        }
     }
 
     public double getLoad(int id) {
         return this.loads[id-1];
     }
-
+    
     public void setLoad(int id, double load) {
         this.loads[id-1] = load;
     }
+    
+    public List<Job> getAllotmentOnMachine(int id) {
+        return this.allotments.get(id - 1);
+    }
 
+    public void setAllotmentOnMachine(List<Job> allotment, int id) {
+        this.allotments.set(id - 1, allotment);
+    }
+    
     public void addJob(Job job, int machine) {
-        this.allotments.put(job, machine);
+        if (this.allotments.get(machine) == null) {
+            this.allotments.set(machine, new ArrayList<>());
+        }
+        this.allotments.get(machine).add(job);
     }
 
     /**
@@ -49,11 +62,12 @@ public class State {
                 newState.getLoads()[i] += job.getP();
             }
         }
-        HashMap<Job, Integer> newAllotments = new HashMap<>();
-        for (Entry<Job, Integer> entry : this.allotments.entrySet()) {
-            newAllotments.put(entry.getKey(), entry.getValue());
+        List<List<Job>> newAllotments = new ArrayList<>();
+        for (int i = 0; i < this.allotments.size(); i++) {
+            //order is kept, because of the for-loop
+            newAllotments.add(new ArrayList<>(this.allotments.get(i)));
         }
-        newAllotments.put(job, id);
+        newAllotments.get(id - 1).add(job);
         newState.setAllotments(newAllotments);
 
         return newState;
@@ -69,6 +83,10 @@ public class State {
             res += Math.pow(l, q);
         }
         return res;
+    }
+
+    public boolean isEmpty() {
+        return this.allotments.stream().allMatch(l -> l.isEmpty());
     }
     
 }

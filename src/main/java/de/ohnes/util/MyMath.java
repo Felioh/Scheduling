@@ -27,16 +27,11 @@ public class MyMath {
     public static Interval[] getLoadIntervals(double epsilon, double delta, double max) {
         List<Interval> res = new ArrayList<>();
         double lower = 0;
-        double upper = 0;
-        while (upper < max) {
+        double upper = epsilon; //there should not be a job with p_j < epsilon, so this interval is effectively [0]
+        while (lower < max) {
             res.add(new Interval(lower, upper));
-            if (lower == 0) {
-                lower = epsilon;
-                upper = epsilon * (1 + delta);
-            } else {
                 lower = upper;
                 upper = upper * (1 + delta);
-            }
         }
         return res.toArray(new Interval[0]);
     }
@@ -91,6 +86,20 @@ public class MyMath {
             tmp_new[tmp_new.length - 1] = element;
             recursiveGetPermutations(list, tmp_new, res, length);
         }
+    }
+
+    public static List<State> getCut(Interval[] intervals, States states) {
+        List<State> res = new ArrayList<>();
+        stateloop:
+        for (State state : states.getStates()) {
+            for (int i = 0; i < intervals.length; i++) {
+                if (!intervals[i].contains(state.getLoad(i+1))) {
+                    continue stateloop;
+                }
+            }
+            res.add(state);
+        }
+        return res;
     }
     
 }

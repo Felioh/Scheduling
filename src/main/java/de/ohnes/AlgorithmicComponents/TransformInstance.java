@@ -54,6 +54,11 @@ public class TransformInstance {
             pTimeSmallJobs += LDivLambda;
         }
 
+        //skale the instance so that every job length is in [\epsilon, 1]
+        for (Job job : newJobs) {
+            job.setP(job.getP() / L);
+        }
+
         //update the instance object I
         Machine[] machines = new Machine[nb_machines];
         for (int i = 0; i < nb_machines; i++) {

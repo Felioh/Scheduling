@@ -48,8 +48,8 @@ public class TransformInstanceTests {
         TransformInstance.transformInstance(I, lambda);
         double L = Arrays.stream(I.getJobs()).map(Job::getP).mapToDouble(Double::doubleValue).sum() / I.getM();
         // double sizeI = Arrays.stream(I.getJobs()).map(Job::getP).mapToDouble(Double::doubleValue).sum();
-        assertTrue("Processing time of every job should be greater than epsilon*L", Arrays.stream(I.getJobs()).allMatch(j -> j.getP() >= this.epsilon*L*0.9));
-        assertTrue("Processing time of every job should be less than L", Arrays.stream(I.getJobs()).allMatch(j -> j.getP() <= L*1.1));
+        assertTrue("Processing time of every job should be greater than epsilon", Arrays.stream(I.getJobs()).allMatch(j -> j.getP() >= this.epsilon*0.9));
+        assertTrue("Processing time of every job should be less than 1", Arrays.stream(I.getJobs()).allMatch(j -> j.getP() <= 1.1));
         // assertEquals("size(I) should equal m(I) after transformation", I.getM(), sizeI, 0.001);
     }
 }
