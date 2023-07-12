@@ -12,8 +12,8 @@ import org.junit.Test;
 
 import de.ohnes.util.Interval;
 import de.ohnes.util.MyMath;
-import de.ohnes.util.State;
-import de.ohnes.util.States;
+import de.ohnes.util.State1;
+import de.ohnes.util.States1;
 
 public class MyMathTests {
     
@@ -59,16 +59,16 @@ public class MyMathTests {
     @Test
     public void testIntervalCut() {
         Interval[] intervals = {new Interval(0, 1), new Interval(2, 4)};
-        States states = new States();
-        State state1 = new State(0, 2);
+        States1 states = new States1();
+        State1 state1 = new State1(0, 2);
         state1.setLoad(1, 0.5);
         state1.setLoad(2, 3);
         states.add(state1);
-        State state2 = new State(0, 2);
+        State1 state2 = new State1(0, 2);
         state2.setLoad(1, 2);
         state2.setLoad(2, 3);
         states.add(state2);
-        List<State> res = MyMath.getCut(intervals, states);
+        List<State1> res = MyMath.getCut(intervals, states);
 
         assertTrue("State1 should be contained in the cut", res.contains(state1));
         assertTrue("State2 should not be contained in the cut", !res.contains(state2));

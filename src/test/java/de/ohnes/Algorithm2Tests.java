@@ -7,21 +7,22 @@ import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
 import de.ohnes.AlgorithmicComponents.Algorithm;
-import de.ohnes.AlgorithmicComponents.Algorithm1;
+import de.ohnes.AlgorithmicComponents.Algorithm2;
 import de.ohnes.AlgorithmicComponents.TransformInstance;
 import de.ohnes.util.Instance;
 import de.ohnes.util.InstanceGenerator;
 import de.ohnes.util.Machine;
 
 @RunWith(Parameterized.class)
-public class Algorithm1Tests {
+public class Algorithm2Tests {
 
-        private static final Logger LOGGER = LogManager.getLogger(Algorithm1Tests.class);
+    private static final Logger LOGGER = LogManager.getLogger(Algorithm1Tests.class);
 
 
     private static final int NB_RANDOM_TESTS = 2;
@@ -30,7 +31,7 @@ public class Algorithm1Tests {
     private double epsilon;
     private int q = 2;  //TODO !!
     
-    public Algorithm1Tests(Instance I, double epsilon) {
+    public Algorithm2Tests(Instance I, double epsilon) {
         this.I = I;
         this.epsilon = epsilon;
     }
@@ -51,14 +52,23 @@ public class Algorithm1Tests {
     }
 
     @Test
-    public void testAlgo1() {
+    @Ignore
+    public void testAlgo2() {
         LOGGER.info("starting test");
-        Algorithm algo1 = new Algorithm1();
+        Algorithm algo2 = new Algorithm2();
 
-        algo1.solve(I, epsilon, q);
+        algo2.solve(I, epsilon, q);
         assertTrue("The load of every machine is <= 2", Arrays.stream(I.getMachines()).allMatch(m -> m.getLoad() <= 2));
         assertTrue("The load of every machine is >= 0.5", Arrays.stream(I.getMachines()).allMatch(m -> m.getLoad() >= 0.5));
         assertTrue("every job is assigned to a machine", Arrays.stream(I.getMachines()).map(Machine::getNumberAssignedJobs).reduce(0, Integer::sum) == I.getN());
     }
+
+    // @Test
+    // public void testitest() {
+    //     List<Integer> ls = Arrays.asList(1, 2, 5, 3);
+    //     ls.stream().sorted(Comparator.comparing(Integer::intValue).reversed()).skip(2).forEachOrdered( i ->{
+    //     LOGGER.info(i);   
+    //     });
+    // }
     
 }

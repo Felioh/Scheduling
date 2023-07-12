@@ -7,7 +7,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Getter
-public class State {
+public class State1 {
 
     private double[] loads;
 
@@ -17,7 +17,7 @@ public class State {
     private List<List<Job>> allotments;
     // private HashMap<Job, Integer> allotments = new HashMap<>();
 
-    public State(int h, int m) {
+    public State1(int h, int m) {
         this.loads = new double[m];
         this.h = h;
         this.allotments = new ArrayList<>(m);
@@ -54,8 +54,8 @@ public class State {
      * @param p_j were to be scheduled on machine @param id
      * @return the new State
      */
-    public State getNextState(int id, Job job) {
-        State newState = new State(this.h + 1, this.loads.length);
+    public State1 getNextState(int id, Job job) {
+        State1 newState = new State1(this.h + 1, this.loads.length);
         for(int i = 0; i < this.loads.length; i++) {
             newState.getLoads()[i] = this.loads[i];
             if (i == id - 1) {

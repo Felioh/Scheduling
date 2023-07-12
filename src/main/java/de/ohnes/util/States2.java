@@ -7,11 +7,11 @@ import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
 @Getter
-public class States {
+public class States2 {
 
-    private HashSet<State> states = new HashSet<>();
+    private HashSet<State2> states = new HashSet<>();
 
-    public void add(State state) {
+    public void add(State2 state) {
         this.states.add(state);
     }
     

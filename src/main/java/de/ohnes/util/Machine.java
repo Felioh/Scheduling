@@ -3,9 +3,12 @@ package de.ohnes.util;
 import java.util.ArrayList;
 import java.util.List;
 
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
+@AllArgsConstructor(access = AccessLevel.PRIVATE)
 public class Machine {
 
     private List<Job> jobs = new ArrayList<Job>();
@@ -24,5 +27,11 @@ public class Machine {
 
     public int getNumberAssignedJobs() {
         return jobs.size();
+    }
+
+    public Machine clone() {
+        List<Job> jobs = new ArrayList<>();
+        jobs.addAll(this.jobs);
+        return new Machine(jobs); 
     }
 }

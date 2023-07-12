@@ -19,7 +19,7 @@ public class MyMath {
     }
 
     /**
-     * returns a list of all intervals up to 2. TODO check!!!
+     * returns a list of all intervals up to max. TODO check!!!
      * @param epsilon
      * @param delta
      * @return
@@ -32,6 +32,27 @@ public class MyMath {
             res.add(new Interval(lower, upper));
                 lower = upper;
                 upper = upper * (1 + delta);
+        }
+        return res.toArray(new Interval[0]);
+    }
+
+    /**
+     * This method returns a list of all possible intervals for algorithm2 of the form:
+     * [x^{h-1}, x^{h}], where x  =\epsilon(1+\sqrt{\epsilon})
+     * TODO check!!
+     * @param epsilon
+     * @return
+     */
+    public static Interval[] getPTimeIntervals(double epsilon) {
+        List<Interval> res = new ArrayList<>();
+        double sqrtEpsilon = Math.sqrt(epsilon);
+        double lower = 0;
+        double upper = epsilon * (1 + sqrtEpsilon);
+        int h = 1;
+        while (lower < 1) {
+            res.add(new Interval(lower, upper));
+            lower = upper;
+            upper = epsilon * Math.pow((1 + sqrtEpsilon), ++h);
         }
         return res.toArray(new Interval[0]);
     }
@@ -88,10 +109,10 @@ public class MyMath {
         }
     }
 
-    public static List<State> getCut(Interval[] intervals, States states) {
-        List<State> res = new ArrayList<>();
+    public static List<State1> getCut(Interval[] intervals, States1 states) {
+        List<State1> res = new ArrayList<>();
         stateloop:
-        for (State state : states.getStates()) {
+        for (State1 state : states.getStates()) {
             for (int i = 0; i < intervals.length; i++) {
                 if (!intervals[i].contains(state.getLoad(i+1))) {
                     continue stateloop;

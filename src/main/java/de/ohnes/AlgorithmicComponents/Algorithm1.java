@@ -11,8 +11,8 @@ import de.ohnes.util.Interval;
 import de.ohnes.util.Job;
 import de.ohnes.util.Machine;
 import de.ohnes.util.MyMath;
-import de.ohnes.util.State;
-import de.ohnes.util.States;
+import de.ohnes.util.State1;
+import de.ohnes.util.States1;
 
 /**
  * Algorithm 1 from the Chen, et. al. paper. As described on p.289
@@ -33,19 +33,19 @@ public class Algorithm1 implements Algorithm {
         Job[] jobs = I.getJobs();
 
 
-        States[] F_hat = new States[I.getN() + 1];
+        States1[] F_hat = new States1[I.getN() + 1];
         //initialization, maybe not needed?
         for (int i = 0; i < F_hat.length; i++) {
-            F_hat[i] = new States();
+            F_hat[i] = new States1();
         }
-        F_hat[0].add(new State(0, I.getM())); //initial state F^_0
+        F_hat[0].add(new State1(0, I.getM())); //initial state F^_0
 
-        LOGGER.debug("starting computation of states.");
+        LOGGER.debug("starting computation of States1.");
 
         for (int j = 1; j <= I.getN(); j++) {
-            States F_prime_j = new States();
+            States1 F_prime_j = new States1();
 
-            for (State prevState : F_hat[j - 1].getStates()) {
+            for (State1 prevState : F_hat[j - 1].getStates()) {
                 for (int i = 1; i <= I.getM(); i++) {
                     if (prevState.getLoad(i) + jobs[j-1].getP() > 2) {  //L_i + p_j <= 2
                         continue;
@@ -54,10 +54,10 @@ public class Algorithm1 implements Algorithm {
                 }
             }
 
-            State roundedState = new State(j, I.getM());
+            State1 roundedState = new State1(j, I.getM());
             for (Interval[] S : MyMath.getPermutationsOfLength(big_gamma, I.getM(), Interval.class)) {
 
-                for (State state : MyMath.getCut(S, F_prime_j)) {
+                for (State1 state : MyMath.getCut(S, F_prime_j)) {
                     for (int i = 1; i <= I.getM(); i++) {
                         //L_i = max{L_i : (..., L_i, ...) \in F' \cut S}
                         //find the maximum L in the cut of F and S
@@ -74,17 +74,17 @@ public class Algorithm1 implements Algorithm {
 
                 if (!roundedState.isEmpty()) {
                     F_hat[j].add(roundedState);
-                    roundedState = new State(j, I.getM());
+                    roundedState = new State1(j, I.getM());
                 }
             }
 
-            LOGGER.debug("Computed set of states for n = {}, out of {}", j, I.getN());
+            LOGGER.debug("Computed set of States1 for n = {}, out of {}", j, I.getN());
         }
 
         //find the allotment with minimum objective. in F_hat_n
         double minOb = Double.MAX_VALUE;
-        State minState = null;
-        for (State state : F_hat[I.getN()].getStates()) {
+        State1 minState = null;
+        for (State1 state : F_hat[I.getN()].getStates()) {
             double ob = state.getCost(q);
             if (ob < minOb) {
                 minOb = ob;
