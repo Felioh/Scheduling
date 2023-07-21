@@ -55,32 +55,61 @@ public class Algorithm2 implements Algorithm {
             //consider all valid states in F[i-1] and try all possible assignments
             for (State2 state : F[i-1].getStates()) {
                 //try all possible assignments on the new machine i
-                // List<List<Job>> remaining_G_h_jobs = new ArrayList<>();
-                // for (List<Job> G_h : G_h_jobs) {
-                //     remaining_G_h_jobs.add(G_h.stream().sorted(Comparator.comparing(Job::getP).reversed()).skip(state.getU_I(i)).collect(Collectors.toList()));
-                // }
                 int[] newU = new int[G_h_jobs.size()]; //the allotment on machine i
-                int h = 0;
-                while (h < G_h_jobs.size()) {
-                    Machine newMachine = new Machine(); //the machine i
-                    Job nextJob = G_h_jobs.get(h).get(newU[h] + state.getU()[h]);
-                    while (newMachine.getLoad() + nextJob.getP() < 2) {
-                        newMachine.addJob(nextJob);
-                        newU[h]++;
+                List<Integer> hs = new ArrayList<>(); //TODO use another datastructure (stack?)
+                // int h = 0;
+                Machine newMachine = new Machine(); //the machine i
 
-                        if (newMachine.getLoad() > 0.5) {
-                            F[i].add(state.getNextState(newMachine.clone(), newU, q));
+                //depth-first search over the "imaginary" tree.
+                mainloop: while (true) {
+                    int h = 0;
+
+                    //going back up the tree.
+                    while (newU[h] + state.getU()[h] >= G_h_jobs.get(h).size() ||
+                        newMachine.getLoad() + G_h_jobs.get(h).get(newU[h] + state.getU()[h]).getP() > 2) {
+                        if (h >= G_h_jobs.size() - 1) {
+                            if (hs.size() == 1) {
+                                break mainloop;
+                            }
+                            //go up.
+                            hs.remove(hs.size() - 1);
+                            h = hs.get(hs.size() - 1);
+                            newMachine.removeLastJob();
+                            newU[h]--;
                         }
-                        //TODO: add all possible assignements respecting lemma 2.2 and lemma 2.3
+                        h++; //go to the right
+                    }
+                    
+                    hs.add(h);
+                    
+                    Job nextJob = G_h_jobs.get(h).get(newU[h] + state.getU()[h]);
+                    newMachine.addJob(nextJob);
+                    newU[h]++;
+
+                    State2 newState = state.getNextState(newMachine.clone(), newU, q);
+                    if (newMachine.getLoad() > 0.5 && !F[i].contains(newState)) {
+                        F[i].add(newState);
                     }
 
-                    h++;
                 }
+                //TODO restrict states (dominance)
+            }
+        }
+        //find the state with minimum objective in F_m
+        double minOb = Double.MAX_VALUE;
+        State2 minState = null;
+        for (State2 state : F[I.getM()].getStates()) {
+            double ob = state.getCost(q);
+            if (ob < minOb) {
+                minOb = ob;
+                minState = state;
             }
         }
 
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'solve'");
+        LOGGER.info("Found solution with objective value {}", minOb);
+        I.setMachines(minState.getAllotments().toArray(new Machine[0]));
+
+
     }
 
     

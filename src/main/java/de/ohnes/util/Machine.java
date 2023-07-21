@@ -17,6 +17,10 @@ public class Machine {
         jobs.add(j);
     }
 
+    public void removeLastJob() {
+        this.jobs.remove(this.jobs.size() - 1);
+    }
+
     /**
      * return the load of this machine. not considering starting times.
      * @return

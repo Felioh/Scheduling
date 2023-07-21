@@ -1,7 +1,7 @@
 package de.ohnes.util;
 
-import java.sql.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import lombok.AllArgsConstructor;
@@ -25,7 +25,7 @@ public class State2 {
     private int[] u;
 
     @Setter
-    private List<Machine> allotments;
+    private List<Machine> allotments = new ArrayList<>();
 
     public State2(int i, double v, int[] u) {
         this.i = i;
@@ -53,4 +53,25 @@ public class State2 {
         return new State2(i + 1, v, u, newAllotments);
     }
 
+    public double getCost(int q) {
+        double res = 0;
+        for (Machine i : allotments) {
+            res += Math.pow(i.getLoad(), q);
+        }
+        return res;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == this) {
+            return true;
+        }
+        
+        if (!(o instanceof State2)) {
+            return false;
+        }
+
+        State2 state2 = (State2) o;
+        return Arrays.equals(this.u, state2.getU());
+    }
 }

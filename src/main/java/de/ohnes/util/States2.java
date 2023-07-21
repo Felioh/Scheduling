@@ -14,5 +14,9 @@ public class States2 {
     public void add(State2 state) {
         this.states.add(state);
     }
+
+    public boolean contains(State2 state) {
+        return states.contains(state);
+    }
     
 }
