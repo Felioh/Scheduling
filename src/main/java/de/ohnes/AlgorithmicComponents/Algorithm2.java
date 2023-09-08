@@ -3,7 +3,9 @@ package de.ohnes.AlgorithmicComponents;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Stack;
 import java.util.stream.Collectors;
 
 import org.apache.logging.log4j.LogManager;
@@ -53,52 +55,45 @@ public class Algorithm2 implements Algorithm {
 
         for (int i = 1; i <= I.getM(); i++) {
             //consider all valid states in F[i-1] and try all possible assignments
-            for (State2 state : F[i-1].getStates()) {
-                //try all possible assignments on the new machine i
-                int[] newU = new int[G_h_jobs.size()]; //the allotment on machine i
-                List<Integer> hs = new ArrayList<>(); //TODO use another datastructure (stack?)
-                // int h = 0;
-                Machine newMachine = new Machine(); //the machine i
+            Stack<State2> prev_states = new Stack<>();
+            Stack<State2> next_states = new Stack<>();
+            prev_states.addAll(F[i-1].getStates());
 
-                //depth-first search over the "imaginary" tree.
-                mainloop: while (true) {
-                    int h = 0;
-
-                    //going back up the tree.
-                    while (newU[h] + state.getU()[h] >= G_h_jobs.get(h).size() ||
-                        newMachine.getLoad() + G_h_jobs.get(h).get(newU[h] + state.getU()[h]).getP() > 2) {
-                        if (h >= G_h_jobs.size() - 1) {
-                            if (hs.size() == 1) {
-                                break mainloop;
-                            }
-                            //go up.
-                            hs.remove(hs.size() - 1);
-                            h = hs.get(hs.size() - 1);
-                            newMachine.removeLastJob();
-                            newU[h]--;
-                        }
-                        h++; //go to the right
-                    }
+            for (int h = 0; h < G_h_jobs.size(); h++) { //for all intervalls
+                //try all possible additions of jobs from interval h
+                while (!prev_states.isEmpty()) {
+                    State2 prev_state = prev_states.pop();
+                    next_states.add(prev_state); //TODO dont use stack but list.
                     
-                    hs.add(h);
-                    
-                    Job nextJob = G_h_jobs.get(h).get(newU[h] + state.getU()[h]);
-                    newMachine.addJob(nextJob);
-                    newU[h]++;
-
-                    State2 newState = state.getNextState(newMachine.clone(), newU, q);
-                    if (newMachine.getLoad() > 0.5 && !F[i].contains(newState)) {
-                        F[i].add(newState);
+                    //TODO: Make sure that the G_h jobs are sorted correctly.
+                    if (prev_state.getU()[h] >= G_h_jobs.get(h).size()) {
+                        continue;
                     }
-
+                    Job nextJob = G_h_jobs.get(h).get(prev_state.getU()[h]);
+                    // for (int hj = prev_state.getU()[h]; hj < G_h_jobs.get(h).size(); hj++) { //TODO start at index.
+                    if (prev_state.getAllotments().size() > i-1 && prev_state.getAllotments().get(i-1).getJobs().contains(nextJob)) {
+                        continue;   //skip, if job is already alloted to state.
+                    }
+                    State2 new_state = prev_state.getNextState(i-1, h, q, nextJob);
+                    if (new_state.getAllotments().get(i-1).getLoad() > 0.5 && new_state.getAllotments().get(i-1).getLoad() < 2) {
+                        F[i].add(new_state);
+                    }
+                    if (new_state.getAllotments().get(i-1).getLoad() < 2) {
+                        prev_states.add(new_state);
+                    }
+                    // }
                 }
-                //TODO restrict states (dominance)
+                prev_states.addAll(next_states);
+                next_states.clear();
             }
         }
         //find the state with minimum objective in F_m
         double minOb = Double.MAX_VALUE;
         State2 minState = null;
         for (State2 state : F[I.getM()].getStates()) {
+            if (Arrays.stream(state.getU()).sum() < jobs.length) {
+                continue;
+            }
             double ob = state.getCost(q);
             if (ob < minOb) {
                 minOb = ob;

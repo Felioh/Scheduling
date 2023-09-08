@@ -7,7 +7,6 @@ import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
@@ -52,7 +51,6 @@ public class Algorithm2Tests {
     }
 
     @Test
-    @Ignore
     public void testAlgo2() {
         LOGGER.info("starting test");
         Algorithm algo2 = new Algorithm2();

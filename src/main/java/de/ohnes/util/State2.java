@@ -37,15 +37,25 @@ public class State2 {
         return this.u[i - 1];
     }
 
-    public State2 getNextState(Machine machine, int[] u, int q) {
-        if (u.length != this.u.length) throw new IllegalArgumentException();
-        
-        for (int i = 0; i < u.length; i++) {
-            u[i] += this.u[i];
+    /**
+     * 
+     * @param i the index of the machine
+     * @param h the index of the intervall that had another job alloted
+     * @param q
+     * @return
+     */
+    public State2 getNextState(int i, int h, int q, Job job) {
+        if (h > this.u.length -1) throw new IllegalArgumentException();
+        int[] u = new int[this.u.length];
+        System.arraycopy(this.u, 0, u, 0, this.u.length);
+        u[h]++;
+
+        List<Machine> newAllotments = copyAllotment();
+        if (newAllotments.size() - 1 < i) {
+            Machine machine = new Machine();
+            newAllotments.add(machine);
         }
-        List<Machine> newAllotments = new ArrayList<>();
-        newAllotments.addAll(allotments);
-        newAllotments.add(machine);
+        newAllotments.get(i).addJob(job);
 
         //compute new objective function.
         double v = newAllotments.stream().map(m -> Math.pow(m.getLoad(), q)).reduce(0.0, Double::sum);
@@ -59,6 +69,16 @@ public class State2 {
             res += Math.pow(i.getLoad(), q);
         }
         return res;
+    }
+
+    private List<Machine> copyAllotment() {
+        List<Machine> newAllotment = new ArrayList<>();
+        for (Machine oldMachine : this.allotments) {
+            Machine machine = new Machine();
+            machine.getJobs().addAll(oldMachine.getJobs());
+            newAllotment.add(machine);
+        }
+        return newAllotment;
     }
 
     @Override

@@ -21,6 +21,10 @@ public class Machine {
         this.jobs.remove(this.jobs.size() - 1);
     }
 
+    public List<Job> getJobs() {
+        return this.jobs;
+    }
+
     /**
      * return the load of this machine. not considering starting times.
      * @return
