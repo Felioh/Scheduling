@@ -33,8 +33,6 @@ public class Algorithm2 implements Algorithm {
 
         Interval[] pTimeIntervals = MyMath.getPTimeIntervals(epsilon);
 
-        Machine[] machines = I.getMachines();
-
         Job[] jobs = I.getJobs();
 
         List<List<Job>> G_h_jobs = new ArrayList<>();
@@ -63,7 +61,7 @@ public class Algorithm2 implements Algorithm {
                 //try all possible additions of jobs from interval h
                 while (!prev_states.isEmpty()) {
                     State2 prev_state = prev_states.pop();
-                    next_states.add(prev_state); //TODO dont use stack but list.
+                    next_states.add(prev_state); //TODO dont use stack but list?
                     
                     //TODO: Make sure that the G_h jobs are sorted correctly.
                     if (prev_state.getU()[h] >= G_h_jobs.get(h).size()) {

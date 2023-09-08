@@ -13,6 +13,7 @@ import lombok.Setter;
  * The state can be expressed as a vector (i, v, u_1, ..., u_tau), this is a valid state if:
  * it is possible to assign the u_h largest jobs in G_h on the first i machines,
  * with objective value equal to v.
+ * TODO: there is room for optimization with the datastructure. Work a bit more with just indicies rather than Objects.
  */
 @Getter
 @AllArgsConstructor
