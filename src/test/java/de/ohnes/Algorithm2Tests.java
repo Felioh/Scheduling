@@ -24,7 +24,7 @@ public class Algorithm2Tests {
     private static final Logger LOGGER = LogManager.getLogger(Algorithm1Tests.class);
 
 
-    private static final int NB_RANDOM_TESTS = 2;
+    private static final int NB_RANDOM_TESTS = 50;
 
     private Instance I;
     private double epsilon;
