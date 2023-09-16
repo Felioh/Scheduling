@@ -21,7 +21,7 @@ import de.ohnes.util.Machine;
 @RunWith(Parameterized.class)
 public class Algorithm1Tests {
 
-        private static final Logger LOGGER = LogManager.getLogger(Algorithm1Tests.class);
+    private static final Logger LOGGER = LogManager.getLogger(Algorithm1Tests.class);
 
 
     private static final int NB_RANDOM_TESTS = 50;
