@@ -43,7 +43,6 @@ public class Algorithm3 implements Algorithm {
         }
         
         Instance I_D = new Instance(new Job[0], new Machine[0]);
-        //TODO deep copy jobs/instances.
 
         while (m > 10) {
             Instance I_prime = new Instance(null, null);
@@ -89,16 +88,19 @@ public class Algorithm3 implements Algorithm {
             //the number of distinct job processing times in I' is at most size(I)/2
             assert I_prime.getDistinctPTimes() <= I.getSize() / 2;
 
-            //TODO construct Conf-IP(I')
-            //TODO solve Conf-IP
-            //TODO create all configurations.
+
+            int[] X = I_prime.getNbPTimes();
+            double[] p = I_prime.getPTimes();
+            
+            //TODO restrict number of configurations.
             List<Configuration> configurations = new ArrayList<>();
-            //TODO
+            Configuration firstConfig = new Configuration(X);
+            configurations.add(firstConfig);
+            firstConfig.constructAllConfigs(configurations);
+            int N = configurations.size();
+
             MPSolver solver = MPSolver.createSolver("GLOP");
             
-            int N = configurations.size();
-            int[] X = I.getNbPTimes();
-            double[] p = I.getPTimes();
 
             //Variables
             double infinity = java.lang.Double.POSITIVE_INFINITY;
