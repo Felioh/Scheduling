@@ -4,17 +4,16 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.google.ortools.Loader;
 import com.google.ortools.linearsolver.MPConstraint;
 import com.google.ortools.linearsolver.MPObjective;
 import com.google.ortools.linearsolver.MPSolver;
 import com.google.ortools.linearsolver.MPVariable;
 
-import de.ohnes.Exceptions.NoExistingSchedule;
 import de.ohnes.util.Configuration;
 import de.ohnes.util.Group;
 import de.ohnes.util.Instance;
@@ -35,9 +34,9 @@ public class Algorithm3 implements Algorithm {
     public void solve(Instance I, double epsilon, int q) {
 
         int m = I.getM();
-        List<Job> jobs = Arrays.stream(I.getJobs()).sorted(Comparator.comparing(Job::getP).reversed()).collect(Collectors.toList());
+        Job[] jobs = Arrays.stream(I.getJobs()).sorted(Comparator.comparing(Job::getP)).toArray(Job[] :: new);
         //TODO check sorting
-        assert jobs.get(0).getP() < jobs.get(1).getP(); //should always be at least 2 jobs.
+        assert jobs[0].getP() < jobs[1].getP(); //should always be at least 2 jobs.
 
         if (I.getN() <= I.getM()) {
             //TODO trivial..
@@ -45,6 +44,8 @@ public class Algorithm3 implements Algorithm {
         
         Instance I_D = new Instance(new Job[0], new Machine[0]);
 
+        Loader.loadNativeLibraries();
+        
         while (m > 10) {
             Instance I_prime = new Instance(null, null);
 
@@ -52,7 +53,7 @@ public class Algorithm3 implements Algorithm {
             harmonic_groups.add(new Group());
             
             //group jobs. line 3 in the pseudo code.
-            for (Job job : I.getJobs()) {
+            for (Job job : jobs) {
                 if (harmonic_groups.get(harmonic_groups.size() - 1).isFull()) {
                     harmonic_groups.add(new Group());
                 }
@@ -72,7 +73,7 @@ public class Algorithm3 implements Algorithm {
             }
             harmonic_groups.remove(0);
             //line 4 in the pseudo code.
-            List<Job> I_D_jobs = Arrays.asList(I_D.getJobs());
+            List<Job> I_D_jobs = new ArrayList<>(Arrays.asList(I_D.getJobs()));
             I_D_jobs.addAll(I_d_jobs);
             I_D.setJobs(I_D_jobs.toArray(new Job[0]));
 
@@ -140,6 +141,25 @@ public class Algorithm3 implements Algorithm {
             MPSolver.ResultStatus resultStatus = solver.solve();
             if (resultStatus == MPSolver.ResultStatus.OPTIMAL || resultStatus == MPSolver.ResultStatus.FEASIBLE) {
                 LOGGER.debug("Found solution to the LP with objective value: {}", objective.value());
+                //construct rounded down solution.
+                Job[] prime_jobs = I_prime.getJobs();
+                List<Machine> machines = new ArrayList<>();
+                for (int j = 0; j < N; j++) {
+                    Configuration configuration = configurations.get(j);
+                    int x_j = (int) Math.floor(x[j].solutionValue());
+                    for (int i = 0; i < x_j; i++) {
+                        Machine machine = new Machine();
+                        for (int p_i = 0; p_i < X.length; p_i++) {
+                            for (int n = 0; n < configuration.get(p_i); n++) {
+                                machine.addJob(harmonic_groups.get(p_i).popJob());
+                            }
+                        }
+                        machines.add(machine);
+                    }
+                }
+                I_prime.setMachines(machines.toArray(new Machine[0]));
+                //TODO construst residue instance. <- add remaining jobs in harmonic groups (and remove them from I')
+
                 //TODO schedule according to the solution. (rounded down)
             } else {
                 LOGGER.error("No feasible solution found.");

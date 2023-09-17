@@ -36,6 +36,7 @@ public class Group {
     public List<Job> removeNJobs(int n) {
         List<Job> discarded_jobs = new ArrayList<>();
         while (n > 0) {
+            if (this.jobs.size() == 0) break; //TODO should this happen??
             discarded_jobs.add(jobs.get(0));
             this.jobs.remove(0);
             n--;
@@ -48,10 +49,16 @@ public class Group {
      * assuming that the jobs are ordered.
      */
     public void liftP() {
-        double p = this.jobs.get(this.jobs.size() -1).getP();
+        if (this.jobs.size() == 0) return;
+        double p = this.jobs.get(this.jobs.size() - 1).getP();
         for (int i = this.jobs.size() - 1; i >= 0; i--) {
             this.jobs.get(i).setP(p);
         }
 
+    }
+
+    public Job popJob() {
+        //can this be empty??
+        return this.jobs.remove(0);
     }
 }
