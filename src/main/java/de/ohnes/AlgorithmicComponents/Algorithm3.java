@@ -14,6 +14,7 @@ import com.google.ortools.linearsolver.MPObjective;
 import com.google.ortools.linearsolver.MPSolver;
 import com.google.ortools.linearsolver.MPVariable;
 
+import de.ohnes.Exceptions.NoExistingSchedule;
 import de.ohnes.util.Configuration;
 import de.ohnes.util.Group;
 import de.ohnes.util.Instance;
@@ -98,6 +99,7 @@ public class Algorithm3 implements Algorithm {
             configurations.add(firstConfig);
             firstConfig.constructAllConfigs(configurations);
             int N = configurations.size();
+            LOGGER.debug("Found {} configuraitons for the conf-LP", N);
 
             MPSolver solver = MPSolver.createSolver("GLOP");
             
@@ -137,9 +139,11 @@ public class Algorithm3 implements Algorithm {
             //solve
             MPSolver.ResultStatus resultStatus = solver.solve();
             if (resultStatus == MPSolver.ResultStatus.OPTIMAL || resultStatus == MPSolver.ResultStatus.FEASIBLE) {
-                //TODO schedule according to the solution.
+                LOGGER.debug("Found solution to the LP with objective value: {}", objective.value());
+                //TODO schedule according to the solution. (rounded down)
             } else {
-                System.err.println("No feasible solution found.");
+                LOGGER.error("No feasible solution found.");
+                return; //TODO decide how to handle this.
             }
         }
 
