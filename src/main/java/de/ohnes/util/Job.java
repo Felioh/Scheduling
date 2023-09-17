@@ -15,4 +15,12 @@ public class Job {
         this.p = p;
         this.id = id;
     }
+
+    /**
+     * copies the job instance, without {@link Job#s}
+     * @return
+     */
+    public Job copy() {
+        return new Job(p, id);
+    }
 }

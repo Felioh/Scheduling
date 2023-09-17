@@ -22,6 +22,13 @@
 
   <dependencies>
 
+    <!-- https://mvnrepository.com/artifact/com.google.ortools/ortools-java -->
+    <dependency>
+        <groupId>com.google.ortools</groupId>
+        <artifactId>ortools-java</artifactId>
+        <version>9.7.2996</version>
+    </dependency>
+
     <dependency>
       <groupId>org.apache.logging.log4j</groupId>
       <artifactId>log4j-api</artifactId>
@@ -211,7 +218,18 @@
   
 
     <dependencies>
-    
+
+      <dependency>
+        <groupId>net.java.dev.jna</groupId>
+        <artifactId>jna</artifactId>
+        <version>5.13.0</version>
+      </dependency>
+
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-core</artifactId>
+        <version>2.10.4</version>
+      </dependency>
 
       <dependency>
         <groupId>org.apache.logging.log4j</groupId>

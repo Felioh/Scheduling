@@ -31,12 +31,16 @@ public class Group {
      * This method will remove the n first items the the "jobs" list.
      * assuming the jobs are orderd it will remove the n smallest jobs.
      * @param n
+     * @return the deleted jobs.
      */
-    public void removeNJobs(int n) {
+    public List<Job> removeNJobs(int n) {
+        List<Job> discarded_jobs = new ArrayList<>();
         while (n > 0) {
+            discarded_jobs.add(jobs.get(0));
             this.jobs.remove(0);
             n--;
         }
+        return discarded_jobs;
     }
 
     /**
