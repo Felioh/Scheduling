@@ -59,6 +59,10 @@ public class Group {
 
     public Job popJob() {
         //can this be empty??
-        return this.jobs.remove(0);
+        try {
+            return this.jobs.remove(0);
+        } catch(IndexOutOfBoundsException e) {
+            return null;
+        }
     }
 }

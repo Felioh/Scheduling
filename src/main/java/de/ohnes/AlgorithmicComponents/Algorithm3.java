@@ -33,20 +33,21 @@ public class Algorithm3 implements Algorithm {
     @Override
     public void solve(Instance I, double epsilon, int q) {
 
-        int m = I.getM();
-        Job[] jobs = Arrays.stream(I.getJobs()).sorted(Comparator.comparing(Job::getP)).toArray(Job[] :: new);
-        //TODO check sorting
-        assert jobs[0].getP() < jobs[1].getP(); //should always be at least 2 jobs.
-
+        Instance I_final = new Instance(null, null); //this intance will contain the jobs that are scheduled.
+        
         if (I.getN() <= I.getM()) {
             //TODO trivial..
         }
         
         Instance I_D = new Instance(new Job[0], new Machine[0]);
-
+        
         Loader.loadNativeLibraries();
         
-        while (m > 10) {
+        while (I.getM() > 10) {
+            Job[] jobs = Arrays.stream(I.getJobs()).sorted(Comparator.comparing(Job::getP)).toArray(Job[] :: new);
+            //TODO check sorting
+            assert jobs[0].getP() < jobs[1].getP(); //should always be at least 2 jobs.
+
             Instance I_prime = new Instance(null, null);
 
             List<Group> harmonic_groups = new ArrayList<>(); //TODO other structure? stack?
@@ -71,6 +72,7 @@ public class Algorithm3 implements Algorithm {
                 I_d_jobs.addAll(harmonic_groups.get(i).removeNJobs(itemsToRemove));
                 lastSize = currentSize; //TODO check.
             }
+            I_d_jobs.addAll(harmonic_groups.get(0).getJobs());
             harmonic_groups.remove(0);
             //line 4 in the pseudo code.
             List<Job> I_D_jobs = new ArrayList<>(Arrays.asList(I_D.getJobs()));
@@ -137,13 +139,15 @@ public class Algorithm3 implements Algorithm {
             }
             objective.setMinimization();
 
+            int nb_residueMachines = I.getM();
             //solve
             MPSolver.ResultStatus resultStatus = solver.solve();
             if (resultStatus == MPSolver.ResultStatus.OPTIMAL || resultStatus == MPSolver.ResultStatus.FEASIBLE) {
                 LOGGER.debug("Found solution to the LP with objective value: {}", objective.value());
                 //construct rounded down solution.
-                Job[] prime_jobs = I_prime.getJobs();
-                List<Machine> machines = new ArrayList<>();
+                // Job[] prime_jobs = I_prime.getJobs();
+                List<Job> assigned_jobs = new ArrayList<>();
+                List<Machine> assigned_machines = new ArrayList<>();
                 for (int j = 0; j < N; j++) {
                     Configuration configuration = configurations.get(j);
                     int x_j = (int) Math.floor(x[j].solutionValue());
@@ -151,25 +155,37 @@ public class Algorithm3 implements Algorithm {
                         Machine machine = new Machine();
                         for (int p_i = 0; p_i < X.length; p_i++) {
                             for (int n = 0; n < configuration.get(p_i); n++) {
-                                machine.addJob(harmonic_groups.get(p_i).popJob());
+                                Job job = harmonic_groups.get(p_i).popJob(); //TODO: handle empty group
+                                I_prime_jobs.remove(job);   //the jobs that remain in I_prime_jobs will be the residue Instance
+                                machine.addJob(job);
+                                assigned_jobs.add(job);
                             }
                         }
-                        machines.add(machine);
+                        assigned_machines.add(machine);
+                        nb_residueMachines--; //decrease the number of machines still in the residue instance.
                     }
                 }
-                I_prime.setMachines(machines.toArray(new Machine[0]));
-                //TODO construst residue instance. <- add remaining jobs in harmonic groups (and remove them from I')
+                I_final.addMachines(assigned_machines.toArray(new Machine[0]));
+                I_final.addJobs(assigned_jobs.toArray(new Job[0]));
 
-                //TODO schedule according to the solution. (rounded down)
             } else {
                 LOGGER.error("No feasible solution found.");
                 return; //TODO decide how to handle this.
             }
+
+            //construct residue instance.
+            I.setJobs(I_prime_jobs.toArray(new Job[0]));
+            List<Machine> machines = new ArrayList<>();
+            for (int i = 0; i < nb_residueMachines; i++) {
+                machines.add(new Machine());
+            }
+            I.setMachines(machines.toArray(new Machine[0]));
+
         }
 
         //line 9 schedule I using Algorithm 1
         Algorithm1 algo1 = new Algorithm1();
-        algo1.solve(I, epsilon, q);
+        algo1.solve(I_D, epsilon, q);
         
         //while the loads are unbalanced (L_i - L_j > 1)
         while (true) {

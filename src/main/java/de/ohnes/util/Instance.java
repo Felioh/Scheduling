@@ -1,6 +1,9 @@
 package de.ohnes.util;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -80,5 +83,20 @@ public class Instance {
             pTimes[i] = lastTime;
         }
         return pTimes;
+    }
+
+    public void addJobs(Job[] jobs) {
+       List<Job> tmpList = new ArrayList<>(this.jobs.length + jobs.length);
+       Collections.addAll(tmpList, this.jobs);
+       Collections.addAll(tmpList, jobs);
+       this.jobs = tmpList.toArray(new Job[0]);
+       
+    }
+
+    public void addMachines(Machine[] machines) {
+        List<Machine> tmpList = new ArrayList<>(this.machines.length + machines.length);
+        Collections.addAll(tmpList, this.machines);
+        Collections.addAll(tmpList, machines);
+        this.machines = tmpList.toArray(new Machine[0]);
     }
 }
