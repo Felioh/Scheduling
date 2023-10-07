@@ -26,6 +26,10 @@ public class Algorithm1 implements Algorithm {
     @Override
     public void solve(Instance I, double epsilon, int q) {
 
+        if (I.getM() == 0 || I.getN() == 0) {
+            return; //nothing to do here since instance is empty.
+        }
+
         double delta = epsilon / I.getN();
 
         Interval[] big_gamma = MyMath.getLoadIntervals(epsilon, delta, 2);

@@ -14,9 +14,9 @@ import lombok.Setter;
 @AllArgsConstructor
 public class Instance {
 
-    private Job[] jobs;
+    private Job[] jobs = new Job[0];
 
-    private Machine[] machines;
+    private Machine[] machines = new Machine[0];
 
     public int getN() {
         return jobs.length;

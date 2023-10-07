@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -33,7 +35,7 @@ public class Algorithm3 implements Algorithm {
     @Override
     public void solve(Instance I, double epsilon, int q) {
 
-        Instance I_final = new Instance(null, null); //this intance will contain the jobs that are scheduled.
+        Instance I_final = new Instance(new Job[0], new Machine[0]); //this intance will contain the jobs that are scheduled.
         
         if (I.getN() <= I.getM()) {
             //TODO trivial..
@@ -45,8 +47,8 @@ public class Algorithm3 implements Algorithm {
         
         while (I.getM() > 10) {
             Job[] jobs = Arrays.stream(I.getJobs()).sorted(Comparator.comparing(Job::getP)).toArray(Job[] :: new);
-            //TODO check sorting
-            assert jobs[0].getP() < jobs[1].getP(); //should always be at least 2 jobs.
+
+            assert jobs[0].getP() <= jobs[1].getP(); //should always be at least 2 jobs.
 
             Instance I_prime = new Instance(null, null);
 
@@ -155,7 +157,11 @@ public class Algorithm3 implements Algorithm {
                         Machine machine = new Machine();
                         for (int p_i = 0; p_i < X.length; p_i++) {
                             for (int n = 0; n < configuration.get(p_i); n++) {
-                                Job job = harmonic_groups.get(p_i).popJob(); //TODO: handle empty group
+                                Job job = harmonic_groups.get(p_i).popJob();
+                                if (job == null) {
+                                    //this means that the LP solution assigned more jobs than available.
+                                    continue;
+                                }
                                 I_prime_jobs.remove(job);   //the jobs that remain in I_prime_jobs will be the residue Instance
                                 machine.addJob(job);
                                 assigned_jobs.add(job);
@@ -185,22 +191,30 @@ public class Algorithm3 implements Algorithm {
 
         //line 9 schedule I using Algorithm 1
         Algorithm1 algo1 = new Algorithm1();
-        algo1.solve(I_D, epsilon, q);
+        algo1.solve(I, epsilon, q);
+        I_final.addJobs(I.getJobs());
+        I_final.addMachines(I.getMachines());
         
-        //while the loads are unbalanced (L_i - L_j > 1)
+        //copy I_final into I, since this is the object that should contain the solved instance.
+        I.setJobs(I_final.getJobs());
+        I.setMachines(I_final.getMachines());
+
+
+        //while the loads are unbalanced (L_i - L_j > 1) -> move largest ptime from i to j
+        // I
         while (true) {
             //TODO
             break;
         }
-        //TODO schedule I_D
 
-
-
-
-
+        //schedule I_D
+        I.addJobs(I_D.getJobs());
+        for (Job j : I_D.getJobs()) {
+            //TODO only sort once and insert updated load after.
+            Machine m = Arrays.stream(I.getMachines()).min(Comparator.comparing(Machine::getLoad)).get();
+            m.addJob(j);
+        }
         
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'solve'");
     }
     
 }

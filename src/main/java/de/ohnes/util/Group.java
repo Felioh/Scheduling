@@ -58,7 +58,7 @@ public class Group {
     }
 
     public Job popJob() {
-        //can this be empty??
+        //can this be empty?? -> Yes. And it can cost 2hr of my life :( TODO wegmachen.
         try {
             return this.jobs.remove(0);
         } catch(IndexOutOfBoundsException e) {

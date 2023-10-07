@@ -14,6 +14,9 @@ public class Machine {
     private List<Job> jobs = new ArrayList<Job>();
     
     public void addJob(Job j) {
+        if (j == null) {
+            throw new IllegalArgumentException();
+        }
         jobs.add(j);
     }
 
@@ -30,6 +33,10 @@ public class Machine {
      * @return
      */
     public double getLoad() {
+        if (jobs.size() == 0) {
+            return 0;
+        }
+        assert !jobs.contains(null);
         return jobs.stream().map(j -> j.getP()).mapToDouble(Double::doubleValue).sum();
     }
 
