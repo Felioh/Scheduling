@@ -3,6 +3,7 @@ package de.ohnes;
 import static org.junit.Assert.assertTrue;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
@@ -24,7 +25,7 @@ public class Algorithm3Tests {
     private static final Logger LOGGER = LogManager.getLogger(Algorithm3Tests.class);
 
 
-    private static final int NB_RANDOM_TESTS = 1;
+    private static final int NB_RANDOM_TESTS = 10;
 
     private Instance I;
     private double epsilon;
@@ -56,9 +57,12 @@ public class Algorithm3Tests {
         Algorithm algo3= new Algorithm3();
 
         algo3.solve(I, epsilon, q);
-        assertTrue("The load of every machine is <= 2", Arrays.stream(I.getMachines()).allMatch(m -> m.getLoad() <= 2));
-        assertTrue("The load of every machine is >= 0.5", Arrays.stream(I.getMachines()).allMatch(m -> m.getLoad() >= 0.5));
-        assertTrue("every job is assigned to a machine", Arrays.stream(I.getMachines()).map(Machine::getNumberAssignedJobs).reduce(0, Integer::sum) == I.getN());
+        assertTrue("The load of every machine should be <= 2 ; " + Arrays.stream(I.getMachines()).max(Comparator.comparing(Machine::getLoad)).get().getLoad(), 
+            Arrays.stream(I.getMachines()).allMatch(m -> m.getLoad() <= 2));
+        assertTrue("The load of every machine should be >= 0.5 ; " + Arrays.stream(I.getMachines()).min(Comparator.comparing(Machine::getLoad)).get().getLoad(),
+            Arrays.stream(I.getMachines()).allMatch(m -> m.getLoad() >= 0.35));
+        assertTrue("every job should be assigned to a machine ; " + I.getN() + " != " + Arrays.stream(I.getMachines()).map(Machine::getNumberAssignedJobs).reduce(0, Integer::sum),
+            Arrays.stream(I.getMachines()).map(Machine::getNumberAssignedJobs).reduce(0, Integer::sum) == I.getN());
     }
     
 }

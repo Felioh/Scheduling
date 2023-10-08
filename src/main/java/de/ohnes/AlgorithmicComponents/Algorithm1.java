@@ -47,9 +47,11 @@ public class Algorithm1 implements Algorithm {
         LOGGER.debug("starting computation of States1.");
 
         for (int j = 1; j <= I.getN(); j++) {
+            //construct a new set of states for every job.
             States1 F_prime_j = new States1();
 
             for (State1 prevState : F_hat[j - 1].getStates()) {
+                //for every previous state add this new job to every machine.
                 for (int i = 1; i <= I.getM(); i++) {
                     if (prevState.getLoad(i) + jobs[j-1].getP() > 2) {  //L_i + p_j <= 2
                         continue;

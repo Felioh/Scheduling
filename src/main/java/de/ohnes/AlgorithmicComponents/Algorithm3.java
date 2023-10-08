@@ -40,6 +40,7 @@ public class Algorithm3 implements Algorithm {
         if (I.getN() <= I.getM()) {
             //TODO trivial..
         }
+        int temp_n = I.getN();
         
         Instance I_D = new Instance(new Job[0], new Machine[0]);
         
@@ -70,17 +71,20 @@ public class Algorithm3 implements Algorithm {
             for (int i = 1; i < harmonic_groups.size(); i++) {
                 int currentSize = harmonic_groups.get(i).getSize();
                 int itemsToRemove = lastSize - currentSize;
-                //the job inside the groups are ordered by processing time due to the order in which they were filled.
+                //the job inside the groups are ordered by processing time due to the order in which they were added.
                 I_d_jobs.addAll(harmonic_groups.get(i).removeNJobs(itemsToRemove));
                 lastSize = currentSize; //TODO check.
             }
-            I_d_jobs.addAll(harmonic_groups.get(0).getJobs());
+            // I_d_jobs.addAll(harmonic_groups.get(0).getJobs());
             harmonic_groups.remove(0);
             //line 4 in the pseudo code.
-            List<Job> I_D_jobs = new ArrayList<>(Arrays.asList(I_D.getJobs()));
-            I_D_jobs.addAll(I_d_jobs);
-            I_D.setJobs(I_D_jobs.toArray(new Job[0]));
+            // List<Job> I_D_jobs = new ArrayList<>(Arrays.asList(I_D.getJobs()));
+            // I_D_jobs.addAll(I_d_jobs);
+            //TODO: add or set???
+            I_D.addJobs(I_d_jobs.toArray(new Job[0]));
 
+            //make sure that the total number of jobs stays constant.
+            assert I_d_jobs.size() + harmonic_groups.stream().map(g -> g.getJobs().size()).mapToDouble(Double::valueOf).sum() == jobs.length;
             
             //"lift the processing time"
             //"and let it be I'"
@@ -109,14 +113,14 @@ public class Algorithm3 implements Algorithm {
             MPSolver solver = MPSolver.createSolver("GLOP");
             
 
-            //Variables
+            //LP: Variables
             double infinity = java.lang.Double.POSITIVE_INFINITY;
             MPVariable[] x = new MPVariable[N];
             for (int j = 0; j < N; j++) {
                 x[j] = solver.makeNumVar(0, infinity, "nb of machines scheduled acording to t_j");
             }
 
-            //constraints
+            //LP: constraints
             //the total number of used machines is m(I)
             MPConstraint numberMachines = solver.makeConstraint(I.getM(), I.getM(), "number used machines");
             for (int j = 0; j < N; j++) {
@@ -130,7 +134,7 @@ public class Algorithm3 implements Algorithm {
                 }
             }
 
-            //objective
+            //LP: objective
             MPObjective objective = solver.objective();
             for (int j = 0; j < N; j++) {
                 double load = 0;
@@ -142,7 +146,7 @@ public class Algorithm3 implements Algorithm {
             objective.setMinimization();
 
             int nb_residueMachines = I.getM();
-            //solve
+            //LP: solve
             MPSolver.ResultStatus resultStatus = solver.solve();
             if (resultStatus == MPSolver.ResultStatus.OPTIMAL || resultStatus == MPSolver.ResultStatus.FEASIBLE) {
                 LOGGER.debug("Found solution to the LP with objective value: {}", objective.value());
@@ -164,6 +168,9 @@ public class Algorithm3 implements Algorithm {
                                 }
                                 I_prime_jobs.remove(job);   //the jobs that remain in I_prime_jobs will be the residue Instance
                                 machine.addJob(job);
+                                //make sure that the jobs has not been assigned before.
+                                assert assigned_machines.stream().noneMatch(m -> m.getJobs().contains(job));
+
                                 assigned_jobs.add(job);
                             }
                         }
@@ -173,6 +180,12 @@ public class Algorithm3 implements Algorithm {
                 }
                 I_final.addMachines(assigned_machines.toArray(new Machine[0]));
                 I_final.addJobs(assigned_jobs.toArray(new Job[0]));
+
+                //Debug:
+                for (int j = 0; j < I_final.getN(); j++) {
+                    Job job = I.getJobs()[j];
+                    assert Arrays.stream(I_final.getMachines()).filter(m -> m.getJobs().contains(job)).count() <= 1;
+                }
 
             } else {
                 LOGGER.error("No feasible solution found.");
@@ -187,21 +200,25 @@ public class Algorithm3 implements Algorithm {
             }
             I.setMachines(machines.toArray(new Machine[0]));
 
+            assert temp_n == I.getN() + I_final.getN() + I_D.getN();
+
         }
 
         //line 9 schedule I using Algorithm 1
         Algorithm1 algo1 = new Algorithm1();
+        assert Arrays.stream(I.getJobs()).noneMatch(j -> Arrays.stream(I_final.getMachines()).anyMatch(m -> m.getJobs().contains(j)));
         algo1.solve(I, epsilon, q);
-        I_final.addJobs(I.getJobs());
-        I_final.addMachines(I.getMachines());
+        I.addJobs(I_final.getJobs());
+        I.addMachines(I_final.getMachines());
+        // I_final.addJobs(I.getJobs());
+        // I_final.addMachines(I.getMachines());
         
-        //copy I_final into I, since this is the object that should contain the solved instance.
-        I.setJobs(I_final.getJobs());
-        I.setMachines(I_final.getMachines());
+        // //copy I_final into I, since this is the object that should contain the solved instance.
+        // I.setJobs(I_final.getJobs());
+        // I.setMachines(I_final.getMachines());
 
 
         //while the loads are unbalanced (L_i - L_j > 1) -> move largest ptime from i to j
-        // I
         while (true) {
             //TODO
             break;
@@ -211,8 +228,10 @@ public class Algorithm3 implements Algorithm {
         I.addJobs(I_D.getJobs());
         for (Job j : I_D.getJobs()) {
             //TODO only sort once and insert updated load after.
-            Machine m = Arrays.stream(I.getMachines()).min(Comparator.comparing(Machine::getLoad)).get();
-            m.addJob(j);
+            Machine machine = Arrays.stream(I.getMachines()).min(Comparator.comparing(Machine::getLoad)).get();
+            //the job should not be assigned to any other machine.
+            assert Arrays.stream(I.getMachines()).noneMatch(m -> m.getJobs().contains(j));
+            machine.addJob(j);
         }
         
     }
