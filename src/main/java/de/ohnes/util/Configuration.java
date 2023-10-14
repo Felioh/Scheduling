@@ -30,6 +30,10 @@ public class Configuration {
         }
 
         while (index >= 0) {
+            // if (index == 0 && nextAllotment[index] == 1) {
+            //     return; //do not add the allotment where no jobs are alloted.
+            // }
+
             if (nextAllotment[index] > 0) {
                 nextAllotment[index]--;
                 addConfigToList(list, nextAllotment);

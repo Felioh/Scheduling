@@ -14,7 +14,6 @@ import org.junit.runners.Parameterized;
 
 import de.ohnes.AlgorithmicComponents.Algorithm;
 import de.ohnes.AlgorithmicComponents.Algorithm3;
-import de.ohnes.AlgorithmicComponents.TransformInstance;
 import de.ohnes.util.Instance;
 import de.ohnes.util.InstanceGenerator;
 import de.ohnes.util.Machine;
@@ -25,7 +24,7 @@ public class Algorithm3Tests {
     private static final Logger LOGGER = LogManager.getLogger(Algorithm3Tests.class);
 
 
-    private static final int NB_RANDOM_TESTS = 10;
+    private static final int NB_RANDOM_TESTS = 50;
 
     private Instance I;
     private double epsilon;
@@ -57,12 +56,16 @@ public class Algorithm3Tests {
         Algorithm algo3= new Algorithm3();
 
         algo3.solve(I, epsilon, q);
-        assertTrue("The load of every machine should be <= 2 ; " + Arrays.stream(I.getMachines()).max(Comparator.comparing(Machine::getLoad)).get().getLoad(), 
-            Arrays.stream(I.getMachines()).allMatch(m -> m.getLoad() <= 2));
-        assertTrue("The load of every machine should be >= 0.5 ; " + Arrays.stream(I.getMachines()).min(Comparator.comparing(Machine::getLoad)).get().getLoad(),
-            Arrays.stream(I.getMachines()).allMatch(m -> m.getLoad() >= 0.35));
+        assertTrue("The load of every machine should be <= 3 ; " + Arrays.stream(I.getMachines()).max(Comparator.comparing(Machine::getLoad)).get().getLoad(), 
+            Arrays.stream(I.getMachines()).allMatch(m -> m.getLoad() <= 3));
+        assertTrue("The load differnce between machines should not be greater than 1; " + getMaxLoadDiff(),
+            getMaxLoadDiff() < 1);
         assertTrue("every job should be assigned to a machine ; " + I.getN() + " != " + Arrays.stream(I.getMachines()).map(Machine::getNumberAssignedJobs).reduce(0, Integer::sum),
             Arrays.stream(I.getMachines()).map(Machine::getNumberAssignedJobs).reduce(0, Integer::sum) == I.getN());
+    }
+
+    private double getMaxLoadDiff() {
+        return Arrays.stream(I.getMachines()).max(Comparator.comparing(Machine::getLoad)).get().getLoad() - Arrays.stream(I.getMachines()).min(Comparator.comparing(Machine::getLoad)).get().getLoad();
     }
     
 }

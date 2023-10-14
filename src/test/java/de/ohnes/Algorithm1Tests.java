@@ -58,7 +58,7 @@ public class Algorithm1Tests {
         algo1.solve(I, epsilon, q);
         assertTrue("The load of every machine is <= 2", Arrays.stream(I.getMachines()).allMatch(m -> m.getLoad() <= 2));
         assertTrue("The load of every machine is >= 0.5", Arrays.stream(I.getMachines()).allMatch(m -> m.getLoad() >= 0.5));
-        assertTrue("every job is assigned to a machine", Arrays.stream(I.getMachines()).map(Machine::getNumberAssignedJobs).reduce(0, Integer::sum) == I.getN());
+        assertTrue("every job is ass(intigned to a machine", Arrays.stream(I.getMachines()).map(Machine::getNumberAssignedJobs).reduce(0, Integer::sum) == I.getN());
     }
     
 }

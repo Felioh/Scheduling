@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.TreeSet;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
@@ -14,6 +15,7 @@ import com.google.ortools.Loader;
 import com.google.ortools.linearsolver.MPConstraint;
 import com.google.ortools.linearsolver.MPObjective;
 import com.google.ortools.linearsolver.MPSolver;
+import com.google.ortools.linearsolver.MPSolverParameters;
 import com.google.ortools.linearsolver.MPVariable;
 
 import de.ohnes.util.Configuration;
@@ -78,9 +80,6 @@ public class Algorithm3 implements Algorithm {
             // I_d_jobs.addAll(harmonic_groups.get(0).getJobs());
             harmonic_groups.remove(0);
             //line 4 in the pseudo code.
-            // List<Job> I_D_jobs = new ArrayList<>(Arrays.asList(I_D.getJobs()));
-            // I_D_jobs.addAll(I_d_jobs);
-            //TODO: add or set???
             I_D.addJobs(I_d_jobs.toArray(new Job[0]));
 
             //make sure that the total number of jobs stays constant.
@@ -98,6 +97,17 @@ public class Algorithm3 implements Algorithm {
             //the number of distinct job processing times in I' is at most size(I)/2
             assert I_prime.getDistinctPTimes() <= I.getSize() / 2;
 
+            //remove empty groups
+            List<Group> emptyGroups = new ArrayList<>();
+            for (Group g : harmonic_groups) {
+                if (g.getSize() == 0) {
+                    emptyGroups.add(g);
+                }
+            }
+            //not using removeAll in order to preserve ordering.
+            for (Group g : emptyGroups) {
+                harmonic_groups.remove(g);
+            }
 
             int[] X = I_prime.getNbPTimes();
             double[] p = I_prime.getPTimes();
@@ -110,26 +120,31 @@ public class Algorithm3 implements Algorithm {
             int N = configurations.size();
             LOGGER.debug("Found {} configuraitons for the conf-LP", N);
 
-            MPSolver solver = MPSolver.createSolver("GLOP");
+            MPSolver solver = MPSolver.createSolver("PDLP"); //GLOP or PDLP (for approx. solutions)
             
 
             //LP: Variables
             double infinity = java.lang.Double.POSITIVE_INFINITY;
             MPVariable[] x = new MPVariable[N];
             for (int j = 0; j < N; j++) {
-                x[j] = solver.makeNumVar(0, infinity, "nb of machines scheduled acording to t_j");
+                x[j] = solver.makeNumVar(0, infinity, String.format("nb of machines scheduled acording to t_%d", j));
             }
 
             //LP: constraints
-            //the total number of used machines is m(I)
+            //the total number of used machines is m(I) (\sum^{N}_{j=1}x_j = m(I))
             MPConstraint numberMachines = solver.makeConstraint(I.getM(), I.getM(), "number used machines");
             for (int j = 0; j < N; j++) {
                 numberMachines.setCoefficient(x[j], 1);
             }
-            //number of items with processing time
+
+            //number of items with processing time (\sum^{N}_{j=1}{t_{ij} \geq b_i} , i \in [1, 2, .. X])
+            //for group i ...
             for (int i = 0; i < X.length; i++) {
-                MPConstraint numberItems = solver.makeConstraint(X[i], infinity, String.format("at least b_{} jobs of size p_{} are used", i, i));
+                //... at least b_i jobs ...
+                MPConstraint numberItems = solver.makeConstraint(X[i], infinity, String.format("at least b_%d: %d jobs of size p_%d are used", i, X[i], i));
+                
                 for (int j = 0; j < N; j++) {
+                    //... are assigned by all configurations.
                     numberItems.setCoefficient(x[j], configurations.get(j).get(i));
                 }
             }
@@ -147,17 +162,20 @@ public class Algorithm3 implements Algorithm {
 
             int nb_residueMachines = I.getM();
             //LP: solve
+            // String model = solver.exportModelAsLpFormat();
+            // System.out.println(model);
+          
             MPSolver.ResultStatus resultStatus = solver.solve();
             if (resultStatus == MPSolver.ResultStatus.OPTIMAL || resultStatus == MPSolver.ResultStatus.FEASIBLE) {
                 LOGGER.debug("Found solution to the LP with objective value: {}", objective.value());
                 //construct rounded down solution.
-                // Job[] prime_jobs = I_prime.getJobs();
                 List<Job> assigned_jobs = new ArrayList<>();
                 List<Machine> assigned_machines = new ArrayList<>();
                 for (int j = 0; j < N; j++) {
                     Configuration configuration = configurations.get(j);
                     int x_j = (int) Math.floor(x[j].solutionValue());
-                    for (int i = 0; i < x_j; i++) {
+                    for (int i = 0; i < x_j; i++) { //assign this configuration x_j times.
+                        //TODO: add special "NULL"-config??
                         Machine machine = new Machine();
                         for (int p_i = 0; p_i < X.length; p_i++) {
                             for (int n = 0; n < configuration.get(p_i); n++) {
@@ -174,22 +192,19 @@ public class Algorithm3 implements Algorithm {
                                 assigned_jobs.add(job);
                             }
                         }
-                        assigned_machines.add(machine);
-                        nb_residueMachines--; //decrease the number of machines still in the residue instance.
+                        if (machine.getLoad() != 0) {
+                            assigned_machines.add(machine);
+                            nb_residueMachines--; //decrease the number of machines still in the residue instance.
+                            // assert machine.getLoad() != 0 : "We should not close an empty machine.";
+                        }
                     }
                 }
                 I_final.addMachines(assigned_machines.toArray(new Machine[0]));
                 I_final.addJobs(assigned_jobs.toArray(new Job[0]));
 
-                //Debug:
-                for (int j = 0; j < I_final.getN(); j++) {
-                    Job job = I.getJobs()[j];
-                    assert Arrays.stream(I_final.getMachines()).filter(m -> m.getJobs().contains(job)).count() <= 1;
-                }
-
             } else {
                 LOGGER.error("No feasible solution found.");
-                return; //TODO decide how to handle this.
+                return; //This does not happen.
             }
 
             //construct residue instance.
@@ -205,33 +220,46 @@ public class Algorithm3 implements Algorithm {
         }
 
         //line 9 schedule I using Algorithm 1
-        Algorithm1 algo1 = new Algorithm1();
+        Algorithm1 algo1 = new Algorithm1(); 
+        
+        assert I.getMachines() != null;
+
+        //apparently there is a very small chance that this happens. Rounding Problems??
+        if (!(I.getM() != 0 || I.getN() == 0)) {
+            LOGGER.error("testing!!!");
+        }
+        assert I.getM() != 0 || I.getN() == 0 : String.format("I has %d machines, but %d jobs.", I.getM(), I.getN());
         assert Arrays.stream(I.getJobs()).noneMatch(j -> Arrays.stream(I_final.getMachines()).anyMatch(m -> m.getJobs().contains(j)));
+        //transform instance I to satisfy the needs of AL1 
+        TransformInstance.transformInstance(I, (int) (1 / epsilon)); //TODO check if 1 / epsilon is correct.
         algo1.solve(I, epsilon, q);
+        //Algorithm1 should assign all jobs.
+        assert Arrays.stream(I.getJobs()).allMatch(j -> Arrays.stream(I.getMachines()).anyMatch(m -> m.getJobs().contains(j)));
         I.addJobs(I_final.getJobs());
         I.addMachines(I_final.getMachines());
-        // I_final.addJobs(I.getJobs());
-        // I_final.addMachines(I.getMachines());
-        
-        // //copy I_final into I, since this is the object that should contain the solved instance.
-        // I.setJobs(I_final.getJobs());
-        // I.setMachines(I_final.getMachines());
 
 
         //while the loads are unbalanced (L_i - L_j > 1) -> move largest ptime from i to j
-        while (true) {
-            //TODO
-            break;
+        Comparator<Machine> comp = Comparator.comparing(Machine::getLoad);
+        List<Machine> sortedMachines = Arrays.asList(I.getMachines());
+        sortedMachines.sort(comp);
+        assert Arrays.stream(I.getJobs()).max(Comparator.comparing(Job::getP)).get().getP() < 1.1 : Arrays.stream(I.getJobs()).max(Comparator.comparing(Job::getP)).get().getP();
+        
+        int lastIndex = sortedMachines.size() - 1;
+        while (sortedMachines.get(lastIndex).getLoad() - sortedMachines.get(0).getLoad() > 1.1) {
+
+            sortedMachines.get(0).addJob(sortedMachines.get(lastIndex).removeLargestJob());
+
+            sortedMachines.sort(comp);
         }
 
         //schedule I_D
         I.addJobs(I_D.getJobs());
         for (Job j : I_D.getJobs()) {
-            //TODO only sort once and insert updated load after.
-            Machine machine = Arrays.stream(I.getMachines()).min(Comparator.comparing(Machine::getLoad)).get();
-            //the job should not be assigned to any other machine.
             assert Arrays.stream(I.getMachines()).noneMatch(m -> m.getJobs().contains(j));
-            machine.addJob(j);
+
+            sortedMachines.sort(comp);
+            sortedMachines.get(0).addJob(j);
         }
         
     }

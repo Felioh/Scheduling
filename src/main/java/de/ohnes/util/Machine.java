@@ -1,6 +1,7 @@
 package de.ohnes.util;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 import lombok.AccessLevel;
@@ -26,6 +27,16 @@ public class Machine {
 
     public List<Job> getJobs() {
         return this.jobs;
+    }
+
+    public Job removeLargestJob() {
+        if (jobs.isEmpty()) {
+            return null;
+        }
+        Job maxJob = jobs.stream().max(Comparator.comparing(Job::getP)).get();
+        jobs.remove(maxJob);
+        return maxJob;
+        
     }
 
     /**
