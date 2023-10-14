@@ -99,4 +99,12 @@ public class Instance {
         Collections.addAll(tmpList, machines);
         this.machines = tmpList.toArray(new Machine[0]);
     }
+
+    /**
+     * Get the objective value of the allotment inside this instance.
+     * @implNote This method should not be used in any algorithm.
+     */
+    public double getObjective(int q) {
+        return Arrays.stream(machines).map(m -> Math.pow(m.getLoad(), q)).mapToDouble(Double::doubleValue).sum();
+    }
 }

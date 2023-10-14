@@ -99,7 +99,7 @@ public class Algorithm1 implements Algorithm {
         }
 
         //rebuild the solution
-        LOGGER.info("Found solution with objective value {}", minOb);
+        LOGGER.debug("Found solution with objective value {}", minOb);
 
         Machine[] machines = I.getMachines();
         for (int i = 1; i <= I.getM(); i++) {

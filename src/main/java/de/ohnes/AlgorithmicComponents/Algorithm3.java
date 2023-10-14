@@ -4,9 +4,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
-import java.util.TreeSet;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -15,7 +12,6 @@ import com.google.ortools.Loader;
 import com.google.ortools.linearsolver.MPConstraint;
 import com.google.ortools.linearsolver.MPObjective;
 import com.google.ortools.linearsolver.MPSolver;
-import com.google.ortools.linearsolver.MPSolverParameters;
 import com.google.ortools.linearsolver.MPVariable;
 
 import de.ohnes.util.Configuration;
@@ -46,7 +42,7 @@ public class Algorithm3 implements Algorithm {
         
         Instance I_D = new Instance(new Job[0], new Machine[0]);
         
-        Loader.loadNativeLibraries();
+        Loader.loadNativeLibraries(); //TODO move this outside the timed zone.
         
         while (I.getM() > 10) {
             Job[] jobs = Arrays.stream(I.getJobs()).sorted(Comparator.comparing(Job::getP)).toArray(Job[] :: new);
@@ -118,7 +114,7 @@ public class Algorithm3 implements Algorithm {
             configurations.add(firstConfig);
             firstConfig.constructAllConfigs(configurations);
             int N = configurations.size();
-            LOGGER.debug("Found {} configuraitons for the conf-LP", N);
+            LOGGER.debug("Found {} configurations for the conf-LP", N);
 
             MPSolver solver = MPSolver.createSolver("PDLP"); //GLOP or PDLP (for approx. solutions)
             
