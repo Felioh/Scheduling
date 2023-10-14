@@ -54,12 +54,18 @@ public class InstanceGenerator {
         
         while (totalProcessingTime > 0) {
             double processingTime = epsilon + Math.random() * (1 - epsilon);
-            
+
             // Ensure processing time does not exceed remaining total processing time
             if (processingTime > totalProcessingTime) {
+                if (totalProcessingTime < epsilon) {
+                    Job firstJob = jobs.get(0);
+                    totalProcessingTime += firstJob.getP();
+                    jobs.remove(firstJob);
+                    continue;
+                }
                 processingTime = totalProcessingTime;
             }
-            
+
             Job job = new Job(processingTime, jobs.size() + 1);
             jobs.add(job);
             totalProcessingTime -= processingTime;
