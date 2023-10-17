@@ -1,12 +1,10 @@
 package de.ohnes.util;
 
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 
+import de.ohnes.Exceptions.StateOutOfBoudsException;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.Setter;
 
 /**
  * This is a state as described in Chen, Tao p.290; Algorithm2
@@ -21,17 +19,19 @@ public class State2 {
     
     private int i;
 
-    private double v;
+    private double[] l;
 
     private int[] u;
 
-    @Setter
-    private List<Machine> allotments = new ArrayList<>();
+    private State2 prev_state;
 
-    public State2(int i, double v, int[] u) {
+    // @Setter
+    // private List<Machine> allotments = new ArrayList<>();
+
+    public State2(int i, int[] u, int m) {
         this.i = i;
-        this.v = v;
         this.u = u;
+        this.l = new double[m];
     }
 
     public int getU_I(int i) {
@@ -40,46 +40,36 @@ public class State2 {
 
     /**
      * 
-     * @param i the index of the machine
-     * @param h the index of the intervall that had another job alloted
-     * @param q
+     * @param i the machine index.
+     * @param h the g_h group that gets another job.
+     * @param p
      * @return
+     * @throws StateOutOfBoudsException
      */
-    public State2 getNextState(int i, int h, int q, Job job) {
+    public State2 getNextState(int i, int h, double p) throws StateOutOfBoudsException {
         if (h > this.u.length -1) throw new IllegalArgumentException();
+
+        if (l[i] + p >= 2) {
+            throw new StateOutOfBoudsException("This state is not valid.");
+        }
+
+        double[] l = new double[this.l.length];
+        System.arraycopy(this.l, 0, l, 0, this.l.length);
+        l[i] += p;
+
         int[] u = new int[this.u.length];
         System.arraycopy(this.u, 0, u, 0, this.u.length);
         u[h]++;
 
-        List<Machine> newAllotments = copyAllotment();
-        if (newAllotments.size() - 1 < i) {
-            Machine machine = new Machine();
-            newAllotments.add(machine);
-        }
-        newAllotments.get(i).addJob(job);
-
-        //compute new objective function.
-        double v = newAllotments.stream().map(m -> Math.pow(m.getLoad(), q)).reduce(0.0, Double::sum);
-
-        return new State2(i + 1, v, u, newAllotments);
+        return new State2(i + 1, l, u, this);
     }
 
     public double getCost(int q) {
         double res = 0;
-        for (Machine i : allotments) {
-            res += Math.pow(i.getLoad(), q);
+        for (double load : this.l) {
+            res += Math.pow(load, q);
         }
         return res;
-    }
-
-    private List<Machine> copyAllotment() {
-        List<Machine> newAllotment = new ArrayList<>();
-        for (Machine oldMachine : this.allotments) {
-            Machine machine = new Machine();
-            machine.getJobs().addAll(oldMachine.getJobs());
-            newAllotment.add(machine);
-        }
-        return newAllotment;
     }
 
     @Override
