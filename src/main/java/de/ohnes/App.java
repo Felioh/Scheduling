@@ -9,6 +9,7 @@ import de.ohnes.AlgorithmicComponents.Algorithm;
 import de.ohnes.AlgorithmicComponents.Algorithm1;
 import de.ohnes.AlgorithmicComponents.Algorithm2;
 import de.ohnes.AlgorithmicComponents.Algorithm3;
+import de.ohnes.logging.MyElasticsearchClient;
 import de.ohnes.util.Instance;
 import de.ohnes.util.InstanceGenerator;
 import de.ohnes.util.TestResult;
@@ -45,19 +46,22 @@ public class App {
 
         
         LOGGER.info("Starting Application!");
+        MyElasticsearchClient.makeConnection(ES_HOST);
         
-        while(true) {
-            runTest();
+        int m = MIN_MACHINES;
+        while(m <= MAX_MACHINES) {   //run this loop until we run out of memory.
+            MyElasticsearchClient.pushData(ES_INDEX, runTest(m));
+            m++;
         }
-
+        System.exit(0);
         // LOGGER.info("END");
     }
 
-    private static TestResult runTest() {
+    private static TestResult runTest(int m) {
         TestResult testResult = new TestResult();
         Algorithm algo;
         //just generate the transformed instance, since the generation has to be done for every algorithm anyway.
-        Instance I = InstanceGenerator.generateTransformedInstance(MIN_MACHINES, MAX_MACHINES, EPSILON);
+        Instance I = InstanceGenerator.generateTransformedInstance(m, m, EPSILON);
         testResult.setJobs(I.getN());
         testResult.setMachines(I.getM());
         if (I.getM() <= Math.sqrt(1 / EPSILON)) {

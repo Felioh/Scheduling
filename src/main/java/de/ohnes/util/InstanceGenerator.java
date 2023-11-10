@@ -44,6 +44,9 @@ public class InstanceGenerator {
      * @param epsilon epsilon needed for canstraint 2.
      */
     public static Instance generateTransformedInstance(int minM, int maxM, double epsilon) {
+        if (epsilon <= 0 || epsilon >= 1) {
+            throw new IllegalArgumentException("Epsilon must be in (0, 1)");
+        }
         int m = (int) (Math.random() * (maxM - minM) + minM);
         double totalProcessingTime = m; // Initialize the total processing time
         List<Job> jobs = new ArrayList<>();

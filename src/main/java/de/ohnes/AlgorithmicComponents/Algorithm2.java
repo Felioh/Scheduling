@@ -19,8 +19,6 @@ import de.ohnes.util.Machine;
 import de.ohnes.util.MyMath;
 import de.ohnes.util.State2;
 import de.ohnes.util.States2;
-import operations_research.pdlp.Solvers.TerminationCriteria.OptimalityCriteriaCase;
-
 /**
  * Algorithm 2 from the Chen, et. al. paper. As described on p.278
  * This algorithm is to be applied to intances with a number of machines

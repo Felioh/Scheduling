@@ -1,0 +1,58 @@
+services:
+  scheduling:
+    image: scheduling:1.0.0
+    networks:
+      - es-net
+    environment:
+      - EPSILON=0.24
+      - MAX_MACHINES=20
+      - MIN_MACHINES=2
+      - Q=2
+      - ES_HOST=elasticsearch
+      - ES_INDEX=testresults
+    depends_on:
+      elasticsearch:
+        condition: service_healthy
+    restart: always
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.17.5
+    environment:
+      - xpack.security.enabled=false
+      - "discovery.type=single-node"
+    networks:
+      - es-net
+    ports:
+      - 9200:9200
+      - 9300:9300
+    volumes:
+      - esdata:/usr/share/elasticsearch/data
+    healthcheck:
+      test: curl --fail http://localhost:9200/_cluster/health?wait_for_status=green&timeout=50s || exit 1
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  kibana:
+    container_name: kb-container
+    image: docker.elastic.co/kibana/kibana:7.17.5
+    environment:
+      - ELASTICSEARCH_HOSTS=http://elasticsearch:9200
+    networks:
+      - es-net
+    depends_on:
+      - elasticsearch
+    ports:
+      - 5601:5601
+    volumes:
+      - kibanadata:/usr/share/kibana/data
+
+networks:
+  es-net:
+    driver: bridge
+
+volumes:
+  esdata:
+    driver: local
+  kibanadata:
+    driver: local
