@@ -73,6 +73,7 @@ public class App {
         } else {
             algo = ALGO3;
         }
+        testResult.setAlgorithm(algo.getClass().getSimpleName());
 
         LOGGER.info("Running instance [n = {}; m = {}] with {}", I.getN(), I.getM(), algo.getClass().getSimpleName());
         

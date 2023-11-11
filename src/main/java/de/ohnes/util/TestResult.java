@@ -15,5 +15,6 @@ public class TestResult {
     private int jobs;
     private int machines;
     private long milliseconds;
+    private String algorithm;
 
 }
