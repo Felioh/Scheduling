@@ -20,7 +20,7 @@ public class TransformInstance {
      *      (3) there exists an optimal solution for I such that the load of each machine belongs to [1/2, 2]
      * where size(I) is the total processing time of jobs in I.
      * @param I the instance to be transformed.
-     * @param lambda
+     * @param lambda should be 1/epsilon. to ensure the processing time of each job in I belongs to [\epsilon, 1].
      */
     public static void transformInstance(Instance I, final int lambda) {
         List<Job> jobs = Arrays.asList(I.getJobs());
@@ -28,7 +28,7 @@ public class TransformInstance {
         int nb_machines = I.getM();
         //the value L as defined in Alon.
         double L = jobs.stream().map(Job::getP).mapToDouble(Double::doubleValue).sum() / nb_machines;
-        //recursively delete all big jobs that are to be scheduled on a single machine.
+        //recursively delete all big jobs that are to be scheduled on a single machine. (see Alon et al. Observation 2.1)
         do {
             int nb_jobs = jobs.size();
             jobs = removeBigJobs(jobs, L);
@@ -36,27 +36,36 @@ public class TransformInstance {
             L = jobs.stream().map(Job::getP).mapToDouble(Double::doubleValue).sum() / nb_machines;
         } while (containsBigJobs(jobs, L));
 
+        // Note: from here on L is an upper bound for the processing time of each job in I.
+
         final double LDivLambdaSquared = L / (lambda * lambda);
         final double LDivLambda = L / lambda;
-        Stream<Job> bigJobs =jobs.stream().filter(j -> j.getP() > LDivLambda);
+        // find all big jobs
+        Stream<Job> bigJobs = jobs.stream().filter(j -> j.getP() > LDivLambda);
         
         //the processing time of all big jobs gets rounded up to the next multiple of L/lamba^2
         bigJobs.forEach(j -> {
             double newP = MyMath.roundUp(j.getP(), LDivLambdaSquared);
             newJobs.add(new Job(newP, j.getId()));
         });
-
+        
         //add small jobs.
-        double S = Arrays.stream(I.getJobs()).filter(j -> j.getP() <= LDivLambda).map(Job::getP).mapToDouble(Double::doubleValue).sum();
+        double S = jobs.stream().filter(j -> j.getP() <= LDivLambda).map(Job::getP).mapToDouble(Double::doubleValue).sum();
         double pTimeSmallJobs = 0.0;
         while (pTimeSmallJobs < S) {
             newJobs.add(new Job(LDivLambda, 0)); //just give all small jobs the index 0... TODO
             pTimeSmallJobs += LDivLambda;
         }
+        
+        double maxP = MyMath.roundUp(L, LDivLambdaSquared);
+        assert newJobs.stream().allMatch(p -> p.getP() <= maxP);
+        assert newJobs.stream().allMatch(p -> p.getP() >= LDivLambda);
 
         //skale the instance so that every job length is in [\epsilon, 1]
         for (Job job : newJobs) {
-            job.setP(job.getP() / L);
+            double newP = job.getP() / maxP;
+            assert newP <= 1.0;
+            job.setP(newP);
         }
 
         //update the instance object I
