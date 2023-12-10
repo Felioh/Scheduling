@@ -62,8 +62,9 @@ public class TransformInstance {
         assert newJobs.stream().allMatch(p -> p.getP() >= LDivLambda);
 
         //skale the instance so that every job length is in [\epsilon, 1]
+        L = newJobs.stream().map(Job::getP).mapToDouble(Double::doubleValue).sum() / nb_machines;
         for (Job job : newJobs) {
-            double newP = job.getP() / maxP;
+            double newP = job.getP() / L;
             assert newP <= 1.0;
             job.setP(newP);
         }
