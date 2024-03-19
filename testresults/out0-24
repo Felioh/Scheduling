@@ -1,0 +1,1142 @@
+13:44:17.734 [main] INFO  de.ohnes.App - Starting Application!
+13:44:18.847 [main] INFO  de.ohnes.App - Running instance [n = 2; m = 1] with Algorithm1
+13:44:18.848 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - starting computation of States1.
+13:44:18.849 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 1, out of 2
+13:44:18.849 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 2, out of 2
+13:44:18.853 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Found solution with objective value 1.0
+13:44:18.857 [main] INFO  de.ohnes.App - Computed Solution with Objective value 1.0 in 6ms
+13:44:18.857 [main] INFO  de.ohnes.App - Result: ed769eec-310e-4337-a7d1-8e6ba9fe781a, 2, 1, 0, Algorithm1, 0.240000, 2.000000, 1.000000
+13:44:19.337 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+13:44:19.660 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+13:44:21.463 [main] INFO  de.ohnes.App - Starting Application!
+13:44:22.368 [main] INFO  de.ohnes.App - Running instance [n = 3; m = 2] with Algorithm1
+13:44:22.369 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - starting computation of States1.
+13:44:22.380 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 1, out of 3
+13:44:22.384 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 2, out of 3
+13:44:22.394 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 3, out of 3
+13:44:22.395 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Found solution with objective value 2.092753855345585
+13:44:22.404 [main] INFO  de.ohnes.App - Computed Solution with Objective value 2.0927538553455856 in 26ms
+13:44:22.404 [main] INFO  de.ohnes.App - Result: 4f25e4b9-12c7-4065-9c6c-cce273680521, 3, 2, 0, Algorithm1, 0.240000, 2.000000, 2.092754
+13:44:22.669 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+13:44:22.924 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+13:44:24.787 [main] INFO  de.ohnes.App - Starting Application!
+13:44:25.676 [main] INFO  de.ohnes.App - Running instance [n = 6; m = 3] with Algorithm2
+13:44:25.704 [main] INFO  de.ohnes.App - Computed Solution with Objective value 4.802786542804647 in 24ms
+13:44:25.709 [main] INFO  de.ohnes.App - Result: 76a2f9c5-150b-4677-ab33-a1ca200ed392, 6, 3, 0, Algorithm2, 0.240000, 2.000000, 4.802787
+13:44:25.986 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+13:44:26.255 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+13:44:28.066 [main] INFO  de.ohnes.App - Starting Application!
+13:44:28.940 [main] INFO  de.ohnes.App - Running instance [n = 6; m = 4] with Algorithm2
+13:44:28.970 [main] INFO  de.ohnes.App - Computed Solution with Objective value 6.3683298837535585 in 26ms
+13:44:28.970 [main] INFO  de.ohnes.App - Result: 82d233f3-a987-42e7-81c7-784cc672decb, 6, 4, 0, Algorithm2, 0.240000, 2.000000, 6.368330
+13:44:29.266 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+13:44:29.521 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+13:44:31.402 [main] INFO  de.ohnes.App - Starting Application!
+13:44:32.244 [main] INFO  de.ohnes.App - Running instance [n = 8; m = 5] with Algorithm2
+13:44:32.302 [main] INFO  de.ohnes.App - Computed Solution with Objective value 9.059611220385406 in 47ms
+13:44:32.303 [main] INFO  de.ohnes.App - Result: 8db0b042-5605-49b4-98ba-09e542e9aa3b, 8, 5, 0, Algorithm2, 0.240000, 2.000000, 9.059611
+13:44:32.586 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+13:44:32.823 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+13:44:34.684 [main] INFO  de.ohnes.App - Starting Application!
+13:44:35.529 [main] INFO  de.ohnes.App - Running instance [n = 12; m = 6] with Algorithm2
+13:44:35.654 [main] INFO  de.ohnes.App - Computed Solution with Objective value 10.055869194473873 in 121ms
+13:44:35.679 [main] INFO  de.ohnes.App - Result: 84c86088-8041-4811-b980-61db7b9b2917, 12, 6, 0, Algorithm2, 0.240000, 2.000000, 10.055869
+13:44:35.968 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+13:44:36.207 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+13:44:38.038 [main] INFO  de.ohnes.App - Starting Application!
+13:44:38.950 [main] INFO  de.ohnes.App - Running instance [n = 14; m = 7] with Algorithm2
+13:44:39.155 [main] INFO  de.ohnes.App - Computed Solution with Objective value 13.009050250506506 in 201ms
+13:44:39.159 [main] INFO  de.ohnes.App - Result: 9e32181b-1600-479d-9d90-602efe910bb0, 14, 7, 0, Algorithm2, 0.240000, 2.000000, 13.009050
+13:44:39.457 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+13:44:39.713 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+13:44:41.538 [main] INFO  de.ohnes.App - Starting Application!
+13:44:42.435 [main] INFO  de.ohnes.App - Running instance [n = 12; m = 8] with Algorithm2
+13:44:42.549 [main] INFO  de.ohnes.App - Computed Solution with Objective value 14.142771692278414 in 103ms
+13:44:42.550 [main] INFO  de.ohnes.App - Result: 6617255a-1fbd-47cc-ac57-e6de7818c1da, 12, 8, 0, Algorithm2, 0.240000, 2.000000, 14.142772
+13:44:42.836 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+13:44:43.084 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+13:44:44.900 [main] INFO  de.ohnes.App - Starting Application!
+13:44:45.752 [main] INFO  de.ohnes.App - Running instance [n = 16; m = 9] with Algorithm2
+13:44:46.265 [main] INFO  de.ohnes.App - Computed Solution with Objective value 17.105667778457253 in 504ms
+13:44:46.265 [main] INFO  de.ohnes.App - Result: 1cce39e3-924e-404f-a7b3-2bbd131808e3, 16, 9, 0, Algorithm2, 0.240000, 2.000000, 17.105668
+13:44:46.554 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+13:44:46.803 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+13:44:48.619 [main] INFO  de.ohnes.App - Starting Application!
+13:44:49.485 [main] INFO  de.ohnes.App - Running instance [n = 17; m = 10] with Algorithm2
+13:44:50.052 [main] INFO  de.ohnes.App - Computed Solution with Objective value 18.185636138944623 in 563ms
+13:44:50.053 [main] INFO  de.ohnes.App - Result: 73d0f75d-402e-43b9-a341-41ead14b7e51, 17, 10, 0, Algorithm2, 0.240000, 2.000000, 18.185636
+13:44:50.355 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+13:44:50.620 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+13:44:52.493 [main] INFO  de.ohnes.App - Starting Application!
+13:44:53.329 [main] INFO  de.ohnes.App - Running instance [n = 15; m = 11] with Algorithm2
+13:44:53.442 [main] INFO  de.ohnes.App - Computed Solution with Objective value 21.048518766713894 in 108ms
+13:44:53.445 [main] INFO  de.ohnes.App - Result: a5c6f7e0-a6ee-45cb-b98f-6e54b2d292ad, 15, 11, 0, Algorithm2, 0.240000, 2.000000, 21.048519
+13:44:53.744 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+13:44:54.006 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+13:44:55.849 [main] INFO  de.ohnes.App - Starting Application!
+13:44:56.676 [main] INFO  de.ohnes.App - Running instance [n = 18; m = 12] with Algorithm2
+13:44:57.059 [main] INFO  de.ohnes.App - Computed Solution with Objective value 21.94664611511916 in 364ms
+13:44:57.062 [main] INFO  de.ohnes.App - Result: d912b772-606f-4f9a-8e03-64ab5c3301a8, 18, 12, 0, Algorithm2, 0.240000, 2.000000, 21.946646
+13:44:57.400 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+13:44:57.651 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+13:44:59.520 [main] INFO  de.ohnes.App - Starting Application!
+13:45:00.409 [main] INFO  de.ohnes.App - Running instance [n = 19; m = 13] with Algorithm2
+13:45:00.933 [main] INFO  de.ohnes.App - Computed Solution with Objective value 25.108348134167663 in 518ms
+13:45:00.934 [main] INFO  de.ohnes.App - Result: ac98c09e-5b9f-42e1-a0d7-0adb64783f59, 19, 13, 0, Algorithm2, 0.240000, 2.000000, 25.108348
+13:45:01.203 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+13:45:01.454 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+13:45:03.228 [main] INFO  de.ohnes.App - Starting Application!
+13:45:04.070 [main] INFO  de.ohnes.App - Running instance [n = 24; m = 14] with Algorithm2
+13:45:06.117 [main] INFO  de.ohnes.App - Computed Solution with Objective value 25.928986463803636 in 2043ms
+13:45:06.143 [main] INFO  de.ohnes.App - Result: fc6c0398-8a64-419c-8620-9ca9ad79ff8e, 24, 14, 0, Algorithm2, 0.240000, 2.000000, 25.928986
+13:45:06.425 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+13:45:06.672 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+13:45:08.549 [main] INFO  de.ohnes.App - Starting Application!
+13:45:09.458 [main] INFO  de.ohnes.App - Running instance [n = 25; m = 15] with Algorithm2
+13:45:20.490 [main] INFO  de.ohnes.App - Computed Solution with Objective value 28.906626983067447 in 10934ms
+13:45:20.518 [main] INFO  de.ohnes.App - Result: c1165ec4-ca29-4c63-a6e6-c76673cfa5f4, 25, 15, 0, Algorithm2, 0.240000, 2.000000, 28.906627
+13:45:21.554 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+13:45:22.211 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+13:45:24.274 [main] INFO  de.ohnes.App - Starting Application!
+13:45:25.157 [main] INFO  de.ohnes.App - Running instance [n = 25; m = 16] with Algorithm2
+13:45:31.916 [main] INFO  de.ohnes.App - Computed Solution with Objective value 30.243824123700467 in 6581ms
+13:45:32.051 [main] INFO  de.ohnes.App - Result: 073e80ae-b7d1-42e5-bf2b-a70b39f97dd5, 25, 16, 0, Algorithm2, 0.240000, 2.000000, 30.243824
+13:45:33.328 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+13:45:34.187 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+13:45:36.164 [main] INFO  de.ohnes.App - Starting Application!
+13:45:37.046 [main] INFO  de.ohnes.App - Running instance [n = 27; m = 17] with Algorithm2
+13:45:41.147 [main] INFO  de.ohnes.App - Computed Solution with Objective value 33.87606291147224 in 3965ms
+13:45:41.173 [main] INFO  de.ohnes.App - Result: 61a123b9-eece-4707-bc48-183ce78576c3, 27, 17, 0, Algorithm2, 0.240000, 2.000000, 33.876063
+13:45:41.964 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+13:45:42.592 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+13:45:44.548 [main] INFO  de.ohnes.App - Starting Application!
+13:45:45.408 [main] INFO  de.ohnes.App - Running instance [n = 32; m = 18] with Algorithm3
+13:45:46.033 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found 15360 configurations for the conf-LP
+13:45:46.739 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found solution to the LP with objective value: 12.227290340908851
+13:45:46.747 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - starting computation of States1.
+13:45:46.748 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 1, out of 1
+13:45:46.748 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Found solution with objective value 1.0
+13:45:46.784 [main] INFO  de.ohnes.App - Computed Solution with Objective value 19.74828505943466 in 1374ms
+13:45:46.801 [main] INFO  de.ohnes.App - Result: 19e490cd-38a9-4704-be5a-5f3355de51b3, 32, 18, 0, Algorithm3, 0.240000, 2.000000, 19.748285
+13:45:47.104 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+13:45:47.353 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+13:45:49.222 [main] INFO  de.ohnes.App - Starting Application!
+13:45:50.071 [main] INFO  de.ohnes.App - Running instance [n = 32; m = 19] with Algorithm3
+13:45:50.694 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found 24000 configurations for the conf-LP
+13:45:52.108 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found solution to the LP with objective value: 13.977285890034558
+13:45:52.133 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - starting computation of States1.
+13:45:52.260 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 1, out of 4
+13:45:52.324 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 2, out of 4
+13:45:52.394 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 3, out of 4
+13:45:52.460 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 4, out of 4
+13:45:52.460 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Found solution with objective value 3.0312
+13:45:52.478 [main] INFO  de.ohnes.App - Computed Solution with Objective value 20.119941699926542 in 2405ms
+13:45:52.494 [main] INFO  de.ohnes.App - Result: a8468a5e-1625-4b0b-bd12-fb9eddf93c8b, 32, 19, 0, Algorithm3, 0.240000, 2.000000, 20.119942
+13:45:52.846 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+13:45:53.079 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+13:45:54.884 [main] INFO  de.ohnes.App - Starting Application!
+13:45:55.739 [main] INFO  de.ohnes.App - Running instance [n = 32; m = 20] with Algorithm3
+13:45:56.302 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found 12288 configurations for the conf-LP
+13:45:56.801 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found solution to the LP with objective value: 11.512027609697917
+13:45:56.810 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - starting computation of States1.
+13:45:56.810 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 1, out of 1
+13:45:56.810 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Found solution with objective value 1.0
+13:45:56.834 [main] INFO  de.ohnes.App - Computed Solution with Objective value 20.12624118227988 in 1094ms
+13:45:56.839 [main] INFO  de.ohnes.App - Result: 1d176b57-52be-41ef-8ab9-b8c6c52ac8df, 32, 20, 0, Algorithm3, 0.240000, 2.000000, 20.126241
+13:45:57.136 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+13:45:57.378 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+13:45:59.196 [main] INFO  de.ohnes.App - Starting Application!
+13:46:00.090 [main] INFO  de.ohnes.App - Running instance [n = 36; m = 21] with Algorithm3
+13:46:00.652 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found 76800 configurations for the conf-LP
+13:46:05.929 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found solution to the LP with objective value: 15.328442063936297
+13:46:05.971 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - starting computation of States1.
+13:49:37.927 [main] INFO  de.ohnes.App - Starting Application!
+13:49:38.812 [main] INFO  de.ohnes.App - Running instance [n = 37; m = 22] with Algorithm3
+13:49:39.381 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found 76800 configurations for the conf-LP
+13:49:43.467 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found solution to the LP with objective value: 13.888898832935253
+13:49:43.510 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - starting computation of States1.
+13:49:55.248 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 1, out of 5
+13:50:18.378 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 2, out of 5
+13:50:46.644 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 3, out of 5
+13:51:12.138 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 4, out of 5
+13:51:50.936 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 5, out of 5
+13:51:51.311 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Found solution with objective value 4.202272220984629
+13:51:51.543 [main] INFO  de.ohnes.App - Computed Solution with Objective value 24.471991731842202 in 132668ms
+13:51:51.685 [main] INFO  de.ohnes.App - Result: 585d0017-5433-4bc1-bd3d-d10cdf376287, 37, 22, 0, Algorithm3, 0.240000, 2.000000, 24.471992
+13:51:53.010 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+13:51:53.691 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+21:05:39.373 [main] INFO  de.ohnes.App - Starting Application!
+21:05:40.415 [main] INFO  de.ohnes.App - Running instance [n = 2; m = 1] with Algorithm1
+21:05:40.416 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - starting computation of States1.
+21:05:40.417 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 1, out of 2
+21:05:40.417 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 2, out of 2
+21:05:40.418 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Found solution with objective value 1.0
+21:05:40.425 [main] INFO  de.ohnes.App - Computed Solution with Objective value 1.0 in 2ms
+21:05:40.426 [main] INFO  de.ohnes.App - Result: a3daa3f4-d827-4842-90cd-7625bf3a3c26, 2, 1, 2, Algorithm1, 0.240000, 2.000000, 1.000000
+21:05:40.710 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+21:05:40.957 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+21:05:42.598 [main] INFO  de.ohnes.App - Starting Application!
+21:05:43.393 [main] INFO  de.ohnes.App - Running instance [n = 4; m = 2] with Algorithm1
+21:05:43.394 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - starting computation of States1.
+21:05:43.409 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 1, out of 4
+21:05:43.420 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 2, out of 4
+21:05:43.429 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 3, out of 4
+21:05:43.432 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 4, out of 4
+21:05:43.449 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Found solution with objective value 2.0119449756993055
+21:05:43.453 [main] INFO  de.ohnes.App - Computed Solution with Objective value 2.0119449756993055 in 56ms
+21:05:43.454 [main] INFO  de.ohnes.App - Result: 566e49bc-a7f5-4a16-a99c-4879a7e980e0, 4, 2, 56, Algorithm1, 0.240000, 2.000000, 2.011945
+21:05:43.705 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+21:05:43.942 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+21:05:45.596 [main] INFO  de.ohnes.App - Starting Application!
+21:05:46.385 [main] INFO  de.ohnes.App - Running instance [n = 6; m = 3] with Algorithm2
+21:05:46.406 [main] INFO  de.ohnes.App - Computed Solution with Objective value 4.953037507497399 in 12ms
+21:05:46.408 [main] INFO  de.ohnes.App - Result: d04770ff-efd6-40ca-9bda-0c3339562dc8, 6, 3, 12, Algorithm2, 0.240000, 2.000000, 4.953038
+21:05:46.656 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+21:05:46.871 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+21:05:48.585 [main] INFO  de.ohnes.App - Starting Application!
+21:05:49.350 [main] INFO  de.ohnes.App - Running instance [n = 9; m = 4] with Algorithm2
+21:05:49.398 [main] INFO  de.ohnes.App - Computed Solution with Objective value 5.811109437565607 in 44ms
+21:05:49.405 [main] INFO  de.ohnes.App - Result: 729450d0-201d-4163-be37-7b90ca98ed6c, 9, 4, 44, Algorithm2, 0.240000, 2.000000, 5.811109
+21:05:49.665 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+21:05:49.919 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+21:05:51.562 [main] INFO  de.ohnes.App - Starting Application!
+21:05:52.304 [main] INFO  de.ohnes.App - Running instance [n = 7; m = 5] with Algorithm2
+21:05:52.332 [main] INFO  de.ohnes.App - Computed Solution with Objective value 9.546253052482069 in 20ms
+21:05:52.334 [main] INFO  de.ohnes.App - Result: 1fe56504-a948-49a0-bec1-3a441bd2766a, 7, 5, 20, Algorithm2, 0.240000, 2.000000, 9.546253
+21:05:52.596 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+21:05:52.819 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+21:05:54.509 [main] INFO  de.ohnes.App - Starting Application!
+21:05:55.336 [main] INFO  de.ohnes.App - Running instance [n = 11; m = 6] with Algorithm2
+21:05:55.436 [main] INFO  de.ohnes.App - Computed Solution with Objective value 10.156706075600592 in 97ms
+21:05:55.437 [main] INFO  de.ohnes.App - Result: 8514a9cb-c25c-4e19-ac79-c72ff16420da, 11, 6, 97, Algorithm2, 0.240000, 2.000000, 10.156706
+21:05:55.688 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+21:05:55.931 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+21:05:57.637 [main] INFO  de.ohnes.App - Starting Application!
+21:05:58.450 [main] INFO  de.ohnes.App - Running instance [n = 10; m = 7] with Algorithm2
+21:05:58.497 [main] INFO  de.ohnes.App - Computed Solution with Objective value 13.511741568195465 in 44ms
+21:05:58.498 [main] INFO  de.ohnes.App - Result: 13e35b69-3048-4b59-8b0a-9d31f4ef403e, 10, 7, 44, Algorithm2, 0.240000, 2.000000, 13.511742
+21:05:58.745 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+21:05:58.995 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+21:06:00.632 [main] INFO  de.ohnes.App - Starting Application!
+21:06:01.405 [main] INFO  de.ohnes.App - Running instance [n = 13; m = 8] with Algorithm2
+21:06:01.541 [main] INFO  de.ohnes.App - Computed Solution with Objective value 14.621566736412591 in 128ms
+21:06:01.542 [main] INFO  de.ohnes.App - Result: 0f58bd9e-5dd3-474f-8a2f-f957f3279270, 13, 8, 128, Algorithm2, 0.240000, 2.000000, 14.621567
+21:06:01.810 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+21:06:02.046 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+21:06:03.670 [main] INFO  de.ohnes.App - Starting Application!
+21:06:04.438 [main] INFO  de.ohnes.App - Running instance [n = 13; m = 9] with Algorithm2
+21:06:04.560 [main] INFO  de.ohnes.App - Computed Solution with Objective value 17.127055012172942 in 118ms
+21:06:04.561 [main] INFO  de.ohnes.App - Result: 9f1fdc55-653d-4cb7-854b-5b2878529339, 13, 9, 118, Algorithm2, 0.240000, 2.000000, 17.127055
+21:06:04.832 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+21:06:05.064 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+21:06:06.769 [main] INFO  de.ohnes.App - Starting Application!
+21:06:07.581 [main] INFO  de.ohnes.App - Running instance [n = 16; m = 10] with Algorithm2
+21:06:07.835 [main] INFO  de.ohnes.App - Computed Solution with Objective value 18.448526661259077 in 250ms
+21:06:07.870 [main] INFO  de.ohnes.App - Result: b79f18a8-2bd4-4b51-be97-5c49a1ec614c, 16, 10, 250, Algorithm2, 0.240000, 2.000000, 18.448527
+21:06:08.180 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+21:06:08.413 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+21:06:10.036 [main] INFO  de.ohnes.App - Starting Application!
+21:06:10.847 [main] INFO  de.ohnes.App - Running instance [n = 18; m = 11] with Algorithm2
+21:06:11.364 [main] INFO  de.ohnes.App - Computed Solution with Objective value 21.03211903849048 in 508ms
+21:06:11.365 [main] INFO  de.ohnes.App - Result: 83add8d3-1e1b-4d20-8f9c-cf1173b7b4f9, 18, 11, 508, Algorithm2, 0.240000, 2.000000, 21.032119
+21:06:11.607 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+21:06:11.832 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+21:06:13.470 [main] INFO  de.ohnes.App - Starting Application!
+21:06:14.279 [main] INFO  de.ohnes.App - Running instance [n = 19; m = 12] with Algorithm2
+21:06:14.834 [main] INFO  de.ohnes.App - Computed Solution with Objective value 21.808047479144754 in 550ms
+21:06:14.835 [main] INFO  de.ohnes.App - Result: d5533ffa-0900-4504-b28a-1cbc084ae8ef, 19, 12, 550, Algorithm2, 0.240000, 2.000000, 21.808047
+21:06:15.077 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+21:06:15.303 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+21:06:16.940 [main] INFO  de.ohnes.App - Starting Application!
+21:06:17.712 [main] INFO  de.ohnes.App - Running instance [n = 19; m = 13] with Algorithm2
+21:06:18.258 [main] INFO  de.ohnes.App - Computed Solution with Objective value 25.274825381707874 in 527ms
+21:06:18.274 [main] INFO  de.ohnes.App - Result: a522c280-e6ae-4386-91f3-ed442c11712c, 19, 13, 527, Algorithm2, 0.240000, 2.000000, 25.274825
+21:06:18.515 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+21:06:18.751 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+21:06:20.392 [main] INFO  de.ohnes.App - Starting Application!
+21:06:21.158 [main] INFO  de.ohnes.App - Running instance [n = 26; m = 14] with Algorithm2
+21:06:28.982 [main] INFO  de.ohnes.App - Computed Solution with Objective value 26.153633509924944 in 7819ms
+21:06:28.986 [main] INFO  de.ohnes.App - Result: b596e4e1-8762-40d8-9e16-43783332e623, 26, 14, 7819, Algorithm2, 0.240000, 2.000000, 26.153634
+21:06:29.264 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+21:06:29.485 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+21:06:31.181 [main] INFO  de.ohnes.App - Starting Application!
+21:06:32.002 [main] INFO  de.ohnes.App - Running instance [n = 26; m = 15] with Algorithm2
+21:06:37.367 [main] INFO  de.ohnes.App - Computed Solution with Objective value 29.522785647502623 in 5361ms
+21:06:37.368 [main] INFO  de.ohnes.App - Result: e0c296f9-664d-49d5-b911-3837c7b0feab, 26, 15, 5361, Algorithm2, 0.240000, 2.000000, 29.522786
+21:06:37.643 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+21:06:37.881 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+21:06:39.598 [main] INFO  de.ohnes.App - Starting Application!
+21:06:40.388 [main] INFO  de.ohnes.App - Running instance [n = 25; m = 16] with Algorithm2
+21:06:41.978 [main] INFO  de.ohnes.App - Computed Solution with Objective value 30.303031403933907 in 1586ms
+21:06:41.978 [main] INFO  de.ohnes.App - Result: 62eb90bf-1427-4b19-9ec5-f20524ef9fc5, 25, 16, 1586, Algorithm2, 0.240000, 2.000000, 30.303031
+21:06:42.259 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+21:06:42.513 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+21:06:44.216 [main] INFO  de.ohnes.App - Starting Application!
+21:06:45.050 [main] INFO  de.ohnes.App - Running instance [n = 28; m = 17] with Algorithm2
+21:07:08.612 [main] INFO  de.ohnes.App - Computed Solution with Objective value 33.3529717816247 in 23558ms
+21:07:08.616 [main] INFO  de.ohnes.App - Result: 7c022f90-9fd8-468b-b636-7939f041e52f, 28, 17, 23558, Algorithm2, 0.240000, 2.000000, 33.352972
+21:07:08.871 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+21:07:09.103 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+21:07:10.804 [main] INFO  de.ohnes.App - Starting Application!
+21:07:11.647 [main] INFO  de.ohnes.App - Running instance [n = 29; m = 18] with Algorithm3
+21:07:12.280 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found 3072 configurations for the conf-LP
+21:07:12.447 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found solution to the LP with objective value: 10.466538004932147
+21:07:12.465 [main] INFO  de.ohnes.App - Computed Solution with Objective value 19.455468777817803 in 817ms
+21:07:12.470 [main] INFO  de.ohnes.App - Result: 852eaa5f-c29b-4726-8096-379873ca575b, 29, 18, 817, Algorithm3, 0.240000, 2.000000, 19.455469
+21:07:12.718 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+21:07:12.943 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+21:07:14.658 [main] INFO  de.ohnes.App - Starting Application!
+21:07:15.415 [main] INFO  de.ohnes.App - Running instance [n = 30; m = 19] with Algorithm3
+21:07:15.972 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found 8192 configurations for the conf-LP
+21:07:16.291 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found solution to the LP with objective value: 12.50604928392676
+21:07:16.299 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - starting computation of States1.
+21:07:16.300 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 1, out of 1
+21:07:16.300 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Found solution with objective value 1.0
+21:07:16.324 [main] INFO  de.ohnes.App - Computed Solution with Objective value 20.872130620085617 in 909ms
+21:07:16.325 [main] INFO  de.ohnes.App - Result: 94b08efb-993b-4ce9-9e31-fd0e6a138694, 30, 19, 909, Algorithm3, 0.240000, 2.000000, 20.872131
+21:07:16.610 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+21:07:16.821 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+21:07:18.464 [main] INFO  de.ohnes.App - Starting Application!
+21:07:19.232 [main] INFO  de.ohnes.App - Running instance [n = 33; m = 20] with Algorithm3
+21:07:19.754 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found 15360 configurations for the conf-LP
+21:07:20.954 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found solution to the LP with objective value: 11.901900166897484
+21:07:20.965 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - starting computation of States1.
+21:07:20.977 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 1, out of 1
+21:07:20.977 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Found solution with objective value 1.0
+21:07:20.991 [main] INFO  de.ohnes.App - Computed Solution with Objective value 22.851637996931842 in 1758ms
+21:07:20.992 [main] INFO  de.ohnes.App - Result: 77ee808f-5079-4701-a48a-dae66086d569, 33, 20, 1758, Algorithm3, 0.240000, 2.000000, 22.851638
+21:07:21.244 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+21:07:21.466 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+21:07:23.131 [main] INFO  de.ohnes.App - Starting Application!
+21:07:23.937 [main] INFO  de.ohnes.App - Running instance [n = 30; m = 21] with Algorithm3
+21:07:24.451 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found 30720 configurations for the conf-LP
+21:07:26.315 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found solution to the LP with objective value: 14.579067696189929
+21:07:26.339 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - starting computation of States1.
+21:07:27.215 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 1, out of 5
+21:07:28.158 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 2, out of 5
+21:07:29.371 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 3, out of 5
+21:07:32.885 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 4, out of 5
+21:07:41.282 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 5, out of 5
+21:07:41.283 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Found solution with objective value 4.266429048785921
+21:07:41.291 [main] INFO  de.ohnes.App - Computed Solution with Objective value 21.129462935359573 in 17353ms
+21:07:41.292 [main] INFO  de.ohnes.App - Result: 60b7c737-9896-49fb-8ced-29459c7f3185, 30, 21, 17353, Algorithm3, 0.240000, 2.000000, 21.129463
+21:07:41.567 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+21:07:41.773 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+21:07:43.437 [main] INFO  de.ohnes.App - Starting Application!
+21:07:44.259 [main] INFO  de.ohnes.App - Running instance [n = 34; m = 22] with Algorithm3
+21:07:44.765 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found 76800 configurations for the conf-LP
+21:07:49.332 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found solution to the LP with objective value: 16.55648660384577
+21:07:49.370 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - starting computation of States1.
+21:07:49.381 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 1, out of 3
+21:07:49.389 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 2, out of 3
+21:07:49.400 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 3, out of 3
+21:07:49.400 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Found solution with objective value 2.089990817263544
+21:07:49.410 [main] INFO  de.ohnes.App - Computed Solution with Objective value 24.33347539749549 in 5149ms
+21:07:49.411 [main] INFO  de.ohnes.App - Result: 84913924-3e51-48a8-a0b6-d010c73a8c6f, 34, 22, 5149, Algorithm3, 0.240000, 2.000000, 24.333475
+21:07:49.661 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+21:07:49.863 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+21:07:51.583 [main] INFO  de.ohnes.App - Starting Application!
+21:07:52.414 [main] INFO  de.ohnes.App - Running instance [n = 38; m = 23] with Algorithm3
+21:07:52.978 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found 92160 configurations for the conf-LP
+21:08:01.517 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found solution to the LP with objective value: 14.30440017312065
+21:08:01.560 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - starting computation of States1.
+21:08:01.561 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 1, out of 1
+21:08:01.561 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Found solution with objective value 1.0
+21:08:01.583 [main] INFO  de.ohnes.App - Computed Solution with Objective value 26.282052932589465 in 9167ms
+21:08:01.592 [main] INFO  de.ohnes.App - Result: ac890876-766a-403a-ad8c-00d69af00fba, 38, 23, 9167, Algorithm3, 0.240000, 2.000000, 26.282053
+21:08:01.851 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+21:08:02.077 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+21:08:03.730 [main] INFO  de.ohnes.App - Starting Application!
+21:08:04.524 [main] INFO  de.ohnes.App - Running instance [n = 43; m = 24] with Algorithm3
+21:08:05.066 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found 345600 configurations for the conf-LP
+21:08:25.975 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found solution to the LP with objective value: 15.534560259911494
+21:08:26.044 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - starting computation of States1.
+21:08:26.162 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 1, out of 4
+21:08:26.246 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 2, out of 4
+21:08:26.361 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 3, out of 4
+21:08:26.552 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 4, out of 4
+21:08:26.553 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Found solution with objective value 3.193771626297578
+21:08:26.582 [main] INFO  de.ohnes.App - Computed Solution with Objective value 27.547143613635562 in 22057ms
+21:08:26.583 [main] INFO  de.ohnes.App - Result: 52e5b7bc-8b5c-411a-96c6-21fd4805f4aa, 43, 24, 22057, Algorithm3, 0.240000, 2.000000, 27.547144
+21:08:27.047 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+21:08:27.363 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+21:08:29.025 [main] INFO  de.ohnes.App - Starting Application!
+21:08:29.789 [main] INFO  de.ohnes.App - Running instance [n = 39; m = 25] with Algorithm3
+21:08:30.346 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found 245760 configurations for the conf-LP
+21:08:48.400 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found solution to the LP with objective value: 16.708144903661022
+21:08:48.446 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - starting computation of States1.
+21:08:48.455 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 1, out of 3
+21:08:48.466 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 2, out of 3
+21:08:48.477 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 3, out of 3
+21:08:48.477 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Found solution with objective value 2.173010380622837
+21:08:48.491 [main] INFO  de.ohnes.App - Computed Solution with Objective value 27.961498444580503 in 18701ms
+21:08:48.492 [main] INFO  de.ohnes.App - Result: e0709c0f-1494-4030-b91f-58ddddd2bd97, 39, 25, 18701, Algorithm3, 0.240000, 2.000000, 27.961498
+21:08:48.745 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+21:08:48.949 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+21:08:50.640 [main] INFO  de.ohnes.App - Starting Application!
+21:08:51.492 [main] INFO  de.ohnes.App - Running instance [n = 42; m = 26] with Algorithm3
+21:08:52.078 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found 1228800 configurations for the conf-LP
+21:11:00.285 [main] ERROR de.ohnes.AlgorithmicComponents.Algorithm3 - No feasible solution found.
+21:11:00.288 [main] INFO  de.ohnes.App - Computed Solution with Objective value 0.0 in 128793ms
+21:11:00.289 [main] INFO  de.ohnes.App - Result: 23ab0c4a-8abd-4ffc-9950-5238acfc8e7b, 42, 26, 128793, Algorithm3, 0.240000, 2.000000, 0.000000
+21:11:00.548 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+21:11:00.773 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+21:11:02.444 [main] INFO  de.ohnes.App - Starting Application!
+21:11:03.258 [main] INFO  de.ohnes.App - Running instance [n = 47; m = 27] with Algorithm3
+21:11:03.854 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found 2304000 configurations for the conf-LP
+21:15:49.235 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found solution to the LP with objective value: 19.988637042601933
+21:15:49.339 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - starting computation of States1.
+21:15:49.455 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 1, out of 5
+21:15:49.568 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 2, out of 5
+21:15:49.686 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 3, out of 5
+21:15:49.874 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 4, out of 5
+21:15:50.213 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 5, out of 5
+21:15:50.213 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Found solution with objective value 3.1248000000000005
+21:15:50.248 [main] INFO  de.ohnes.App - Computed Solution with Objective value 29.896811406743417 in 286990ms
+21:15:50.249 [main] INFO  de.ohnes.App - Result: 2321928d-b8ab-4cd0-910e-4a93a471e2c9, 47, 27, 286990, Algorithm3, 0.240000, 2.000000, 29.896811
+21:15:50.721 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+21:15:50.993 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+21:15:52.664 [main] INFO  de.ohnes.App - Starting Application!
+21:15:53.454 [main] INFO  de.ohnes.App - Running instance [n = 44; m = 28] with Algorithm3
+21:15:54.016 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found 1474560 configurations for the conf-LP
+21:23:28.675 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found solution to the LP with objective value: 20.37345598868485
+21:23:28.789 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - starting computation of States1.
+21:23:29.776 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 1, out of 5
+21:23:30.699 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 2, out of 5
+21:23:31.910 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 3, out of 5
+21:23:35.492 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 4, out of 5
+21:23:41.851 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 5, out of 5
+21:23:41.851 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Found solution with objective value 4.157943067033976
+21:23:41.885 [main] INFO  de.ohnes.App - Computed Solution with Objective value 28.527138024095592 in 468429ms
+21:23:41.887 [main] INFO  de.ohnes.App - Result: 89f2f6a7-e7cc-404d-862e-acc9ac760118, 44, 28, 468429, Algorithm3, 0.240000, 2.000000, 28.527138
+21:23:42.142 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+21:23:42.355 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+21:23:44.021 [main] INFO  de.ohnes.App - Starting Application!
+21:23:44.799 [main] INFO  de.ohnes.App - Running instance [n = 49; m = 29] with Algorithm3
+21:23:45.959 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found 11059200 configurations for the conf-LP
+00:28:37.217 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found solution to the LP with objective value: 22.53891085414118
+00:28:37.416 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - starting computation of States1.
+00:31:02.855 [main] INFO  de.ohnes.App - Starting Application!
+00:31:03.656 [main] INFO  de.ohnes.App - Running instance [n = 45; m = 30] with Algorithm3
+00:31:04.353 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found 4915200 configurations for the conf-LP
+00:52:50.857 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found solution to the LP with objective value: 23.931329974809863
+00:52:50.983 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - starting computation of States1.
+01:09:13.858 [main] ERROR de.ohnes.App - Out of Memory Error! Stopping Application!
+01:09:19.426 [main] INFO  de.ohnes.App - Starting Application!
+01:09:20.186 [main] INFO  de.ohnes.App - Running instance [n = 55; m = 31] with Algorithm3
+01:09:24.945 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found 51609600 configurations for the conf-LP
+20:11:15.026 [main] INFO  de.ohnes.App - Starting Application!
+20:11:19.008 [main] INFO  de.ohnes.App - Starting Application!
+20:11:19.835 [main] INFO  de.ohnes.App - Running instance [n = 3; m = 2] with Algorithm1
+20:11:19.836 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - starting computation of States1.
+20:11:19.844 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 1, out of 3
+20:11:19.856 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 2, out of 3
+20:11:19.859 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 3, out of 3
+20:11:19.867 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Found solution with objective value 2.096376318650189
+20:11:19.870 [main] INFO  de.ohnes.App - Computed Solution with Objective value 2.096376318650189 in 32ms
+20:11:19.873 [main] INFO  de.ohnes.App - Result: ebaf5284-8a05-4119-aa4c-e1b8094a26ee, 3, 2, 32, Algorithm1, 0.240000, 2.000000, 2.096376
+20:11:20.158 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+20:11:20.425 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+20:11:22.137 [main] INFO  de.ohnes.App - Starting Application!
+20:11:22.933 [main] INFO  de.ohnes.App - Running instance [n = 6; m = 3] with Algorithm2
+20:11:22.957 [main] INFO  de.ohnes.App - Computed Solution with Objective value 4.795813985823109 in 13ms
+20:11:22.960 [main] INFO  de.ohnes.App - Result: 40f3c7f2-b261-4bbf-9961-a5d75295a23a, 6, 3, 13, Algorithm2, 0.240000, 2.000000, 4.795814
+20:11:23.203 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+20:11:23.438 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+20:11:25.167 [main] INFO  de.ohnes.App - Starting Application!
+20:11:25.949 [main] INFO  de.ohnes.App - Running instance [n = 7; m = 4] with Algorithm2
+20:11:25.968 [main] INFO  de.ohnes.App - Computed Solution with Objective value 6.679640101761287 in 16ms
+20:11:25.975 [main] INFO  de.ohnes.App - Result: 19aa54a2-c047-44ab-9af5-7e3c075e6c16, 7, 4, 16, Algorithm2, 0.240000, 2.000000, 6.679640
+20:11:26.224 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+20:11:26.456 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+20:11:28.170 [main] INFO  de.ohnes.App - Starting Application!
+20:11:28.989 [main] INFO  de.ohnes.App - Running instance [n = 8; m = 5] with Algorithm2
+20:11:29.030 [main] INFO  de.ohnes.App - Computed Solution with Objective value 9.06531343753953 in 37ms
+20:11:29.041 [main] INFO  de.ohnes.App - Result: cb9441a7-ac32-4b12-8deb-36f6d46a4179, 8, 5, 37, Algorithm2, 0.240000, 2.000000, 9.065313
+20:11:29.296 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+20:11:29.517 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+20:11:31.177 [main] INFO  de.ohnes.App - Starting Application!
+20:11:31.976 [main] INFO  de.ohnes.App - Running instance [n = 10; m = 6] with Algorithm2
+20:11:32.069 [main] INFO  de.ohnes.App - Computed Solution with Objective value 10.350765265466134 in 89ms
+20:11:32.071 [main] INFO  de.ohnes.App - Result: c3dac69b-8941-43bd-aeca-8aadb979194d, 10, 6, 89, Algorithm2, 0.240000, 2.000000, 10.350765
+20:11:32.316 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+20:11:32.551 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+20:11:34.277 [main] INFO  de.ohnes.App - Starting Application!
+20:11:35.144 [main] INFO  de.ohnes.App - Running instance [n = 13; m = 7] with Algorithm2
+20:11:35.318 [main] INFO  de.ohnes.App - Computed Solution with Objective value 12.768682861467951 in 160ms
+20:11:35.320 [main] INFO  de.ohnes.App - Result: 1f54a5d9-6be5-46b9-ada3-b94d67e98805, 13, 7, 160, Algorithm2, 0.240000, 2.000000, 12.768683
+20:11:35.567 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+20:11:35.813 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+20:11:37.501 [main] INFO  de.ohnes.App - Starting Application!
+20:11:38.342 [main] INFO  de.ohnes.App - Running instance [n = 14; m = 8] with Algorithm2
+20:11:38.600 [main] INFO  de.ohnes.App - Computed Solution with Objective value 14.072057302636928 in 254ms
+20:11:38.600 [main] INFO  de.ohnes.App - Result: 76aef0fc-4b3c-43d1-8a60-e01d370ec781, 14, 8, 254, Algorithm2, 0.240000, 2.000000, 14.072057
+20:11:38.923 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+20:11:39.171 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+20:11:40.873 [main] INFO  de.ohnes.App - Starting Application!
+20:11:41.694 [main] INFO  de.ohnes.App - Running instance [n = 16; m = 9] with Algorithm2
+20:11:42.128 [main] INFO  de.ohnes.App - Computed Solution with Objective value 17.211444961431276 in 424ms
+20:11:42.132 [main] INFO  de.ohnes.App - Result: f354173c-054b-4f84-a4c1-57e93d8fa7c5, 16, 9, 424, Algorithm2, 0.240000, 2.000000, 17.211445
+20:11:42.413 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+20:11:42.646 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+20:11:44.406 [main] INFO  de.ohnes.App - Starting Application!
+20:11:45.248 [main] INFO  de.ohnes.App - Running instance [n = 16; m = 10] with Algorithm2
+20:11:45.662 [main] INFO  de.ohnes.App - Computed Solution with Objective value 18.05866211506467 in 409ms
+20:11:45.669 [main] INFO  de.ohnes.App - Result: 856f02f5-8629-4585-90cb-758b779066ce, 16, 10, 409, Algorithm2, 0.240000, 2.000000, 18.058662
+20:11:45.955 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+20:11:46.196 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+20:11:47.938 [main] INFO  de.ohnes.App - Starting Application!
+20:11:48.825 [main] INFO  de.ohnes.App - Running instance [n = 19; m = 11] with Algorithm2
+20:11:49.810 [main] INFO  de.ohnes.App - Computed Solution with Objective value 21.097230917844563 in 981ms
+20:11:49.831 [main] INFO  de.ohnes.App - Result: c8063d5a-b811-464d-acc2-cb79e4c2255a, 19, 11, 981, Algorithm2, 0.240000, 2.000000, 21.097231
+20:11:50.094 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+20:11:50.333 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+20:11:52.037 [main] INFO  de.ohnes.App - Starting Application!
+20:11:52.811 [main] INFO  de.ohnes.App - Running instance [n = 19; m = 12] with Algorithm2
+20:11:53.584 [main] INFO  de.ohnes.App - Computed Solution with Objective value 21.672834798973465 in 766ms
+20:11:53.584 [main] INFO  de.ohnes.App - Result: 142d58e5-54bb-4cc9-803e-bc78878f7999, 19, 12, 766, Algorithm2, 0.240000, 2.000000, 21.672835
+20:11:53.841 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+20:11:54.084 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+20:11:55.782 [main] INFO  de.ohnes.App - Starting Application!
+20:11:56.605 [main] INFO  de.ohnes.App - Running instance [n = 17; m = 13] with Algorithm2
+20:11:56.731 [main] INFO  de.ohnes.App - Computed Solution with Objective value 25.426017826244184 in 123ms
+20:11:56.732 [main] INFO  de.ohnes.App - Result: f173cac8-d92e-4983-94f3-4c5b1d490bd4, 17, 13, 123, Algorithm2, 0.240000, 2.000000, 25.426018
+20:11:56.994 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+20:11:57.205 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+20:11:58.933 [main] INFO  de.ohnes.App - Starting Application!
+20:11:59.780 [main] INFO  de.ohnes.App - Running instance [n = 21; m = 14] with Algorithm2
+20:12:00.561 [main] INFO  de.ohnes.App - Computed Solution with Objective value 25.95517840077583 in 759ms
+20:12:00.565 [main] INFO  de.ohnes.App - Result: ca6b451a-908d-445b-9bb8-5e72f86fe603, 21, 14, 759, Algorithm2, 0.240000, 2.000000, 25.955178
+20:12:00.840 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+20:12:01.084 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+20:12:02.821 [main] INFO  de.ohnes.App - Starting Application!
+20:12:03.680 [main] INFO  de.ohnes.App - Running instance [n = 27; m = 15] with Algorithm2
+20:12:14.688 [main] INFO  de.ohnes.App - Starting Application!
+20:12:15.508 [main] INFO  de.ohnes.App - Running instance [n = 25; m = 16] with Algorithm2
+21:55:43.038 [main] INFO  de.ohnes.App - Starting Application!
+21:55:43.940 [main] INFO  de.ohnes.App - Running instance [n = 2; m = 1] with Algorithm1
+21:55:43.941 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - starting computation of States1.
+21:55:43.941 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 1, out of 2
+21:55:43.941 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 2, out of 2
+21:55:43.942 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Found solution with objective value 1.0
+21:55:43.946 [main] INFO  de.ohnes.App - Computed Solution with Objective value 1.0 in 2ms
+21:55:43.947 [main] INFO  de.ohnes.App - Result: 551666af-e6a5-44b0-8c83-2aca902f2a2b, 2, 1, 2, Algorithm1, 0.240000, 2.000000, 1.000000
+21:55:44.205 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+21:55:44.453 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+21:55:46.244 [main] INFO  de.ohnes.App - Starting Application!
+21:55:47.081 [main] INFO  de.ohnes.App - Running instance [n = 4; m = 2] with Algorithm1
+21:55:47.082 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - starting computation of States1.
+21:55:47.103 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 1, out of 4
+21:55:47.113 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 2, out of 4
+21:55:47.114 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 3, out of 4
+21:55:47.115 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 4, out of 4
+21:55:47.116 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Found solution with objective value 2.0002232427596827
+21:55:47.120 [main] INFO  de.ohnes.App - Computed Solution with Objective value 2.0002232427596827 in 35ms
+21:55:47.121 [main] INFO  de.ohnes.App - Result: 53c67dd4-35ea-4e81-a002-cfa6cf5d8ff1, 4, 2, 35, Algorithm1, 0.240000, 2.000000, 2.000223
+21:55:47.404 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+21:55:47.639 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+21:55:49.402 [main] INFO  de.ohnes.App - Starting Application!
+21:55:50.267 [main] INFO  de.ohnes.App - Running instance [n = 4; m = 3] with Algorithm2
+21:55:50.276 [main] INFO  de.ohnes.App - Computed Solution with Objective value 5.026572693900457 in 5ms
+21:55:50.277 [main] INFO  de.ohnes.App - Result: 48b1e2cb-dabf-4660-b74a-9ba68e2cabe1, 4, 3, 5, Algorithm2, 0.240000, 2.000000, 5.026573
+21:55:50.543 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+21:55:50.782 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+21:55:52.556 [main] INFO  de.ohnes.App - Starting Application!
+21:55:53.380 [main] INFO  de.ohnes.App - Running instance [n = 7; m = 4] with Algorithm2
+21:55:53.406 [main] INFO  de.ohnes.App - Computed Solution with Objective value 6.260148969130773 in 22ms
+21:55:53.409 [main] INFO  de.ohnes.App - Result: 5318e782-1e42-49c1-b9f6-4446c5b3ddb4, 7, 4, 22, Algorithm2, 0.240000, 2.000000, 6.260149
+21:55:53.679 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+21:55:53.924 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+21:55:55.707 [main] INFO  de.ohnes.App - Starting Application!
+21:55:56.530 [main] INFO  de.ohnes.App - Running instance [n = 8; m = 5] with Algorithm2
+21:55:56.576 [main] INFO  de.ohnes.App - Computed Solution with Objective value 9.089122192436642 in 34ms
+21:55:56.577 [main] INFO  de.ohnes.App - Result: 7f3ae505-ca91-4511-8c6f-ee64f27280ec, 8, 5, 34, Algorithm2, 0.240000, 2.000000, 9.089122
+21:55:56.844 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+21:55:57.100 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+21:55:58.927 [main] INFO  de.ohnes.App - Starting Application!
+21:55:59.736 [main] INFO  de.ohnes.App - Running instance [n = 11; m = 6] with Algorithm2
+21:55:59.839 [main] INFO  de.ohnes.App - Computed Solution with Objective value 10.006788993076388 in 91ms
+21:55:59.843 [main] INFO  de.ohnes.App - Result: 233bcd4a-a0e1-426d-9115-780df53381e7, 11, 6, 91, Algorithm2, 0.240000, 2.000000, 10.006789
+21:56:00.104 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+21:56:00.363 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+21:56:02.150 [main] INFO  de.ohnes.App - Starting Application!
+21:56:02.981 [main] INFO  de.ohnes.App - Running instance [n = 11; m = 7] with Algorithm2
+21:56:03.089 [main] INFO  de.ohnes.App - Computed Solution with Objective value 13.176842563298937 in 103ms
+21:56:03.090 [main] INFO  de.ohnes.App - Result: 32906bd1-c2bc-4147-89ec-3f4e742993b8, 11, 7, 103, Algorithm2, 0.240000, 2.000000, 13.176843
+21:56:03.383 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+21:56:03.667 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+21:56:05.463 [main] INFO  de.ohnes.App - Starting Application!
+21:56:06.317 [main] INFO  de.ohnes.App - Running instance [n = 14; m = 8] with Algorithm2
+21:56:06.516 [main] INFO  de.ohnes.App - Computed Solution with Objective value 14.1676348835521 in 183ms
+21:56:06.517 [main] INFO  de.ohnes.App - Result: 681b05e5-1e98-47a9-80a1-9aa31415ff1f, 14, 8, 183, Algorithm2, 0.240000, 2.000000, 14.167635
+21:56:06.830 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+21:56:07.084 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+21:56:09.028 [main] INFO  de.ohnes.App - Starting Application!
+21:56:09.839 [main] INFO  de.ohnes.App - Running instance [n = 17; m = 9] with Algorithm2
+21:56:10.237 [main] INFO  de.ohnes.App - Computed Solution with Objective value 17.083544244588772 in 393ms
+21:56:10.237 [main] INFO  de.ohnes.App - Result: fe7b1820-ce55-4af0-b45b-ba0d0d04a478, 17, 9, 393, Algorithm2, 0.240000, 2.000000, 17.083544
+21:56:10.501 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+21:56:10.741 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+21:56:12.520 [main] INFO  de.ohnes.App - Starting Application!
+21:56:13.364 [main] INFO  de.ohnes.App - Running instance [n = 17; m = 10] with Algorithm2
+21:56:13.900 [main] INFO  de.ohnes.App - Computed Solution with Objective value 17.92612075393541 in 504ms
+21:56:13.901 [main] INFO  de.ohnes.App - Result: 96cca002-7beb-48e7-8aab-36069550774c, 17, 10, 504, Algorithm2, 0.240000, 2.000000, 17.926121
+21:56:14.160 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+21:56:14.403 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+21:56:16.213 [main] INFO  de.ohnes.App - Starting Application!
+21:56:17.062 [main] INFO  de.ohnes.App - Running instance [n = 17; m = 11] with Algorithm2
+21:56:17.309 [main] INFO  de.ohnes.App - Computed Solution with Objective value 21.451932298480394 in 241ms
+21:56:17.323 [main] INFO  de.ohnes.App - Result: 1bf27b15-5e0a-4905-8706-a1d48d258d0e, 17, 11, 241, Algorithm2, 0.240000, 2.000000, 21.451932
+21:56:17.682 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+21:56:17.932 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+21:56:19.708 [main] INFO  de.ohnes.App - Starting Application!
+21:56:20.538 [main] INFO  de.ohnes.App - Running instance [n = 20; m = 12] with Algorithm2
+21:56:21.491 [main] INFO  de.ohnes.App - Computed Solution with Objective value 22.316076085263546 in 949ms
+21:56:21.492 [main] INFO  de.ohnes.App - Result: 58f13d39-6f75-4816-a8e5-9faffc778c52, 20, 12, 949, Algorithm2, 0.240000, 2.000000, 22.316076
+21:56:21.791 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+21:56:22.031 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+21:56:23.831 [main] INFO  de.ohnes.App - Starting Application!
+21:56:24.660 [main] INFO  de.ohnes.App - Running instance [n = 25; m = 13] with Algorithm2
+21:56:34.056 [main] INFO  de.ohnes.App - Computed Solution with Objective value 25.378663428194876 in 9391ms
+21:56:34.083 [main] INFO  de.ohnes.App - Result: a52db8b2-cff8-4986-9bdc-494be2fbb013, 25, 13, 9391, Algorithm2, 0.240000, 2.000000, 25.378663
+21:56:34.347 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+21:56:34.582 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+21:56:36.434 [main] INFO  de.ohnes.App - Starting Application!
+21:56:37.320 [main] INFO  de.ohnes.App - Running instance [n = 23; m = 14] with Algorithm2
+21:56:39.873 [main] INFO  de.ohnes.App - Computed Solution with Objective value 26.176475913714803 in 2549ms
+21:56:39.874 [main] INFO  de.ohnes.App - Result: 82d52b87-8f5d-4378-bdd6-331c47c81d8b, 23, 14, 2549, Algorithm2, 0.240000, 2.000000, 26.176476
+21:56:40.152 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+21:56:40.406 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+21:56:42.168 [main] INFO  de.ohnes.App - Starting Application!
+21:56:43.005 [main] INFO  de.ohnes.App - Running instance [n = 25; m = 15] with Algorithm2
+21:56:50.521 [main] INFO  de.ohnes.App - Computed Solution with Objective value 29.286733891922157 in 7494ms
+21:56:50.536 [main] INFO  de.ohnes.App - Result: 86cac4d6-3f48-4827-a486-b3e119b787cc, 25, 15, 7494, Algorithm2, 0.240000, 2.000000, 29.286734
+21:56:50.806 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+21:56:51.055 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+21:56:52.851 [main] INFO  de.ohnes.App - Starting Application!
+21:56:53.688 [main] INFO  de.ohnes.App - Running instance [n = 25; m = 16] with Algorithm2
+21:56:54.149 [main] INFO  de.ohnes.App - Computed Solution with Objective value 30.529610239443663 in 456ms
+21:56:54.150 [main] INFO  de.ohnes.App - Result: 7de84de5-16b7-4ca0-9dfa-5ec804400ade, 25, 16, 456, Algorithm2, 0.240000, 2.000000, 30.529610
+21:56:54.447 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+21:56:54.686 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+21:56:56.495 [main] INFO  de.ohnes.App - Starting Application!
+21:56:57.381 [main] INFO  de.ohnes.App - Running instance [n = 31; m = 17] with Algorithm2
+21:58:05.591 [main] INFO  de.ohnes.App - Computed Solution with Objective value 33.179868715559344 in 68206ms
+21:58:05.596 [main] INFO  de.ohnes.App - Result: 91ac4585-ad1f-44ea-adb7-93808529f8ce, 31, 17, 68206, Algorithm2, 0.240000, 2.000000, 33.179869
+21:58:05.897 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+21:58:06.139 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+21:58:08.020 [main] INFO  de.ohnes.App - Starting Application!
+21:58:08.878 [main] INFO  de.ohnes.App - Running instance [n = 31; m = 18] with Algorithm3
+21:58:09.458 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found 7680 configurations for the conf-LP
+21:58:09.993 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found solution to the LP with objective value: 10.437152586370514
+21:58:10.002 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - starting computation of States1.
+21:58:10.920 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 1, out of 5
+21:58:11.866 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 2, out of 5
+21:58:13.109 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 3, out of 5
+21:58:16.671 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 4, out of 5
+21:58:25.310 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 5, out of 5
+21:58:25.310 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Found solution with objective value 4.199763313609468
+21:58:25.321 [main] INFO  de.ohnes.App - Computed Solution with Objective value 19.943190398455094 in 16442ms
+21:58:25.347 [main] INFO  de.ohnes.App - Result: e9681578-a0a4-4f79-8383-580ddbe80cfb, 31, 18, 16442, Algorithm3, 0.240000, 2.000000, 19.943190
+21:58:25.663 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+21:58:25.900 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+21:58:27.763 [main] INFO  de.ohnes.App - Starting Application!
+21:58:28.601 [main] INFO  de.ohnes.App - Running instance [n = 31; m = 19] with Algorithm3
+21:58:29.196 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found 19200 configurations for the conf-LP
+21:58:30.552 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found solution to the LP with objective value: 13.480748897203268
+21:58:30.567 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - starting computation of States1.
+21:58:31.474 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 1, out of 5
+21:58:32.410 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 2, out of 5
+21:58:34.355 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 3, out of 5
+21:58:40.677 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 4, out of 5
+21:58:55.403 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 5, out of 5
+21:58:55.404 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Found solution with objective value 4.224058769513315
+21:58:55.428 [main] INFO  de.ohnes.App - Computed Solution with Objective value 20.446224638336798 in 26826ms
+21:58:55.440 [main] INFO  de.ohnes.App - Result: b90de65f-8933-4ec3-a718-de8a18dc5c91, 31, 19, 26826, Algorithm3, 0.240000, 2.000000, 20.446225
+21:58:55.710 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+21:58:55.931 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+21:58:57.814 [main] INFO  de.ohnes.App - Starting Application!
+21:58:58.684 [main] INFO  de.ohnes.App - Running instance [n = 37; m = 20] with Algorithm3
+21:58:59.256 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found 24000 configurations for the conf-LP
+21:59:00.518 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found solution to the LP with objective value: 11.603245817545616
+21:59:00.558 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - starting computation of States1.
+21:59:00.688 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 1, out of 4
+21:59:00.727 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 2, out of 4
+21:59:00.766 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 3, out of 4
+21:59:00.821 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 4, out of 4
+21:59:00.821 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Found solution with objective value 3.1824000000000012
+21:59:00.848 [main] INFO  de.ohnes.App - Computed Solution with Objective value 24.209597879365035 in 2163ms
+21:59:00.865 [main] INFO  de.ohnes.App - Result: 593c6943-d6b1-4c09-8169-43828fe0c564, 37, 20, 2163, Algorithm3, 0.240000, 2.000000, 24.209598
+21:59:01.214 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+21:59:01.432 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+21:59:03.264 [main] INFO  de.ohnes.App - Starting Application!
+21:59:04.149 [main] INFO  de.ohnes.App - Running instance [n = 36; m = 21] with Algorithm3
+21:59:04.707 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found 46080 configurations for the conf-LP
+21:59:06.956 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found solution to the LP with objective value: 13.13758969531506
+21:59:06.988 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - starting computation of States1.
+21:59:07.000 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 1, out of 3
+21:59:07.010 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 2, out of 3
+21:59:07.014 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 3, out of 3
+21:59:07.014 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Found solution with objective value 2.0899908172635446
+21:59:07.029 [main] INFO  de.ohnes.App - Computed Solution with Objective value 24.74598910570077 in 2879ms
+21:59:07.029 [main] INFO  de.ohnes.App - Result: 2e0ccb4f-9bc7-427c-b6ab-b6c84718d545, 36, 21, 2879, Algorithm3, 0.240000, 2.000000, 24.745989
+21:59:07.286 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+21:59:07.538 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+21:59:09.406 [main] INFO  de.ohnes.App - Starting Application!
+21:59:10.310 [main] INFO  de.ohnes.App - Running instance [n = 38; m = 22] with Algorithm3
+21:59:10.891 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found 92160 configurations for the conf-LP
+21:59:18.009 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found solution to the LP with objective value: 13.82989648713443
+21:59:18.050 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - starting computation of States1.
+21:59:18.142 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 1, out of 4
+21:59:18.190 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 2, out of 4
+21:59:18.226 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 3, out of 4
+21:59:18.270 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 4, out of 4
+21:59:18.270 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Found solution with objective value 3.1824239900041658
+21:59:18.309 [main] INFO  de.ohnes.App - Computed Solution with Objective value 23.2254899438439 in 7998ms
+21:59:18.315 [main] INFO  de.ohnes.App - Result: a041d1f9-01e1-4a09-8021-f2143b7f0a86, 38, 22, 7998, Algorithm3, 0.240000, 2.000000, 23.225490
+21:59:18.679 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+21:59:18.901 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+21:59:20.726 [main] INFO  de.ohnes.App - Starting Application!
+21:59:21.535 [main] INFO  de.ohnes.App - Running instance [n = 41; m = 23] with Algorithm3
+21:59:22.158 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found 288000 configurations for the conf-LP
+21:59:42.883 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found solution to the LP with objective value: 15.451732359813612
+21:59:42.946 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - starting computation of States1.
+21:59:43.034 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 1, out of 4
+21:59:43.107 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 2, out of 4
+21:59:43.144 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 3, out of 4
+21:59:43.189 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 4, out of 4
+21:59:43.189 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Found solution with objective value 3.0774677217825905
+21:59:43.198 [main] INFO  de.ohnes.App - Computed Solution with Objective value 24.36329666667207 in 21662ms
+21:59:43.199 [main] INFO  de.ohnes.App - Result: e22a78f7-1124-4ea4-89ab-180bdb9b8544, 41, 23, 21662, Algorithm3, 0.240000, 2.000000, 24.363297
+21:59:43.619 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+21:59:43.827 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+21:59:45.731 [main] INFO  de.ohnes.App - Starting Application!
+21:59:46.572 [main] INFO  de.ohnes.App - Running instance [n = 39; m = 24] with Algorithm3
+21:59:47.194 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found 307200 configurations for the conf-LP
+22:00:18.044 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found solution to the LP with objective value: 17.548154352800285
+22:00:18.098 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - starting computation of States1.
+22:08:51.814 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 1, out of 7
+22:18:54.603 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 2, out of 7
+22:37:42.528 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 3, out of 7
+23:05:31.827 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 4, out of 7
+00:25:25.041 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 5, out of 7
+06:45:54.067 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 6, out of 7
+12:21:11.695 [main] INFO  de.ohnes.App - Starting Application!
+12:21:12.907 [main] INFO  de.ohnes.App - Running instance [n = 17; m = 10] with Algorithm2
+12:21:13.454 [main] INFO  de.ohnes.App - Computed Solution with Objective value 18.343727310310737 in 544ms
+12:21:13.475 [main] INFO  de.ohnes.App - Result: 6486971c-fb32-4aaf-9686-ba0ad2b18bdb, 17, 10, 544, Algorithm2, 0.240000, 2.000000, 18.343727
+12:21:13.799 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+12:21:14.077 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+12:21:15.762 [main] INFO  de.ohnes.App - Starting Application!
+12:21:16.609 [main] INFO  de.ohnes.App - Running instance [n = 17; m = 11] with Algorithm2
+12:21:17.061 [main] INFO  de.ohnes.App - Computed Solution with Objective value 21.04862371756544 in 448ms
+12:21:17.063 [main] INFO  de.ohnes.App - Result: fa3a900b-f864-4444-9dc7-e0f7fcefa36f, 17, 11, 448, Algorithm2, 0.240000, 2.000000, 21.048624
+12:21:17.325 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+12:21:17.557 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+12:21:19.272 [main] INFO  de.ohnes.App - Starting Application!
+12:21:20.100 [main] INFO  de.ohnes.App - Running instance [n = 19; m = 12] with Algorithm2
+12:21:20.967 [main] INFO  de.ohnes.App - Computed Solution with Objective value 21.92608510737366 in 863ms
+12:21:20.968 [main] INFO  de.ohnes.App - Result: 67459fc9-2d22-4a59-931b-48b4042bd242, 19, 12, 863, Algorithm2, 0.240000, 2.000000, 21.926085
+12:21:21.249 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+12:21:21.491 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+12:21:23.222 [main] INFO  de.ohnes.App - Starting Application!
+12:21:24.097 [main] INFO  de.ohnes.App - Running instance [n = 21; m = 13] with Algorithm2
+12:21:25.408 [main] INFO  de.ohnes.App - Computed Solution with Objective value 25.217935458936072 in 1307ms
+12:21:25.409 [main] INFO  de.ohnes.App - Result: bd649992-ac72-4f0d-8e6d-ab8343706ad9, 21, 13, 1307, Algorithm2, 0.240000, 2.000000, 25.217935
+12:21:25.698 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+12:21:25.947 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+12:21:27.705 [main] INFO  de.ohnes.App - Starting Application!
+12:21:28.536 [main] INFO  de.ohnes.App - Running instance [n = 21; m = 14] with Algorithm2
+12:21:29.466 [main] INFO  de.ohnes.App - Computed Solution with Objective value 26.050926675203023 in 926ms
+12:21:29.484 [main] INFO  de.ohnes.App - Result: a72194af-4e45-4e8d-a05d-440f4f6c8a6a, 21, 14, 926, Algorithm2, 0.240000, 2.000000, 26.050927
+12:21:29.725 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+12:21:29.970 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+12:21:31.696 [main] INFO  de.ohnes.App - Starting Application!
+12:21:32.523 [main] INFO  de.ohnes.App - Running instance [n = 26; m = 15] with Algorithm2
+12:21:38.477 [main] INFO  de.ohnes.App - Computed Solution with Objective value 29.604209611214866 in 5935ms
+12:21:38.478 [main] INFO  de.ohnes.App - Result: 83dbcf74-c121-4fea-bcec-47c16591684c, 26, 15, 5935, Algorithm2, 0.240000, 2.000000, 29.604210
+12:21:38.771 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+12:21:39.012 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+12:21:40.836 [main] INFO  de.ohnes.App - Starting Application!
+12:21:41.665 [main] INFO  de.ohnes.App - Running instance [n = 23; m = 16] with Algorithm2
+12:21:42.422 [main] INFO  de.ohnes.App - Computed Solution with Objective value 30.361798218206296 in 739ms
+12:21:42.423 [main] INFO  de.ohnes.App - Result: 364f5418-d60d-48ce-8eae-cd5859c59d99, 23, 16, 739, Algorithm2, 0.240000, 2.000000, 30.361798
+12:21:42.706 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+12:21:42.958 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+12:21:44.633 [main] INFO  de.ohnes.App - Starting Application!
+12:21:45.484 [main] INFO  de.ohnes.App - Running instance [n = 26; m = 17] with Algorithm2
+12:21:47.159 [main] INFO  de.ohnes.App - Computed Solution with Objective value 33.20100090317463 in 1670ms
+12:21:47.163 [main] INFO  de.ohnes.App - Result: cdcd4741-5f2d-4be4-9b80-c1bd86fddc12, 26, 17, 1670, Algorithm2, 0.240000, 2.000000, 33.201001
+12:21:47.421 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+12:21:47.658 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+12:21:49.404 [main] INFO  de.ohnes.App - Starting Application!
+12:21:50.177 [main] INFO  de.ohnes.App - Running instance [n = 29; m = 18] with Algorithm3
+12:21:50.762 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found 3072 configurations for the conf-LP
+12:21:50.936 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found solution to the LP with objective value: 10.13999319838569
+12:21:50.957 [main] INFO  de.ohnes.App - Computed Solution with Objective value 19.34704978738259 in 779ms
+12:21:50.961 [main] INFO  de.ohnes.App - Result: 79f4182b-a83e-4a43-848e-80288a336e3f, 29, 18, 779, Algorithm3, 0.240000, 2.000000, 19.347050
+12:21:51.222 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+12:21:51.441 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+12:21:53.147 [main] INFO  de.ohnes.App - Starting Application!
+12:21:53.969 [main] INFO  de.ohnes.App - Running instance [n = 32; m = 19] with Algorithm3
+12:21:54.513 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found 15360 configurations for the conf-LP
+12:21:55.252 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found solution to the LP with objective value: 12.39645878851405
+12:21:55.261 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - starting computation of States1.
+12:21:55.292 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 1, out of 3
+12:21:55.317 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 2, out of 3
+12:21:55.323 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 3, out of 3
+12:21:55.323 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Found solution with objective value 2.0899908172635446
+12:21:55.334 [main] INFO  de.ohnes.App - Computed Solution with Objective value 21.152732166133827 in 1363ms
+12:21:55.334 [main] INFO  de.ohnes.App - Result: 9c2d6b06-5942-4d72-91c2-be076ff0a0dd, 32, 19, 1363, Algorithm3, 0.240000, 2.000000, 21.152732
+12:21:55.849 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+12:21:56.199 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+12:21:57.999 [main] INFO  de.ohnes.App - Starting Application!
+12:21:58.892 [main] INFO  de.ohnes.App - Running instance [n = 28; m = 20] with Algorithm3
+12:21:59.463 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found 9216 configurations for the conf-LP
+12:22:00.038 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found solution to the LP with objective value: 14.667423498265723
+12:22:00.076 [main] INFO  de.ohnes.App - Computed Solution with Objective value 21.194054097465912 in 1183ms
+12:22:00.077 [main] INFO  de.ohnes.App - Result: 3a98c1e4-9885-44e2-8591-64453ba03ff1, 28, 20, 1183, Algorithm3, 0.240000, 2.000000, 21.194054
+12:22:00.346 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+12:22:00.559 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+12:22:02.320 [main] INFO  de.ohnes.App - Starting Application!
+12:22:03.173 [main] INFO  de.ohnes.App - Running instance [n = 37; m = 21] with Algorithm3
+12:22:03.699 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found 57600 configurations for the conf-LP
+12:22:07.381 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found solution to the LP with objective value: 14.203478053627741
+12:22:07.424 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - starting computation of States1.
+12:22:07.434 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 1, out of 3
+12:22:07.443 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 2, out of 3
+12:22:07.447 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 3, out of 3
+12:22:07.455 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Found solution with objective value 2.0899908172635446
+12:22:07.467 [main] INFO  de.ohnes.App - Computed Solution with Objective value 23.520344979815988 in 4293ms
+12:22:07.468 [main] INFO  de.ohnes.App - Result: 2177b32f-ec80-40ae-b0f1-2ad8185e797d, 37, 21, 4293, Algorithm3, 0.240000, 2.000000, 23.520345
+12:22:07.740 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+12:22:07.982 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+12:22:09.732 [main] INFO  de.ohnes.App - Starting Application!
+12:22:10.548 [main] INFO  de.ohnes.App - Running instance [n = 34; m = 22] with Algorithm3
+12:22:11.073 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found 30720 configurations for the conf-LP
+12:22:12.024 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found solution to the LP with objective value: 13.461625890898322
+12:22:12.063 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - starting computation of States1.
+12:22:12.064 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 1, out of 1
+12:22:12.064 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Found solution with objective value 1.0
+12:22:12.104 [main] INFO  de.ohnes.App - Computed Solution with Objective value 22.60665729282917 in 1555ms
+12:22:12.111 [main] INFO  de.ohnes.App - Result: 4aae56db-25a9-45c5-a420-2a2f89cf4083, 34, 22, 1555, Algorithm3, 0.240000, 2.000000, 22.606657
+12:22:12.404 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+12:22:12.645 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+12:22:14.380 [main] INFO  de.ohnes.App - Starting Application!
+12:22:15.217 [main] INFO  de.ohnes.App - Running instance [n = 41; m = 23] with Algorithm3
+12:22:15.775 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found 192000 configurations for the conf-LP
+12:22:26.458 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found solution to the LP with objective value: 15.14619670165244
+12:22:26.518 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - starting computation of States1.
+12:22:26.651 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 1, out of 4
+12:22:26.741 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 2, out of 4
+12:22:26.855 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 3, out of 4
+12:22:27.067 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 4, out of 4
+12:22:27.067 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Found solution with objective value 3.1032000000000006
+12:22:27.098 [main] INFO  de.ohnes.App - Computed Solution with Objective value 27.30930024501746 in 11880ms
+12:22:27.100 [main] INFO  de.ohnes.App - Result: 517b6c6e-09b4-4f75-9686-6aaecfaf267d, 41, 23, 11880, Algorithm3, 0.240000, 2.000000, 27.309300
+12:22:27.626 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+12:22:27.925 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+12:22:29.737 [main] INFO  de.ohnes.App - Starting Application!
+12:22:30.605 [main] INFO  de.ohnes.App - Running instance [n = 42; m = 24] with Algorithm3
+12:22:31.203 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found 460800 configurations for the conf-LP
+12:22:59.639 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found solution to the LP with objective value: 16.38805462043787
+12:22:59.808 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - starting computation of States1.
+12:23:01.665 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 1, out of 6
+12:23:03.398 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 2, out of 6
+12:23:07.520 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 3, out of 6
+12:23:15.958 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 4, out of 6
+12:23:45.276 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 5, out of 6
+12:24:57.047 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 6, out of 6
+12:24:57.048 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Found solution with objective value 4.152372466028068
+12:24:57.085 [main] INFO  de.ohnes.App - Computed Solution with Objective value 27.992215849637372 in 146477ms
+12:24:57.087 [main] INFO  de.ohnes.App - Result: 5d99bd92-6580-44da-9292-8299b8574d9c, 42, 24, 146477, Algorithm3, 0.240000, 2.000000, 27.992216
+12:24:57.387 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+12:24:57.615 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+12:24:59.657 [main] INFO  de.ohnes.App - Starting Application!
+12:25:00.496 [main] INFO  de.ohnes.App - Running instance [n = 41; m = 25] with Algorithm3
+12:25:01.080 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found 230400 configurations for the conf-LP
+12:25:57.936 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found solution to the LP with objective value: 16.448425241571222
+12:25:58.003 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - starting computation of States1.
+12:25:58.125 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 1, out of 4
+12:25:58.224 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 2, out of 4
+12:25:58.320 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 3, out of 4
+12:25:58.438 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 4, out of 4
+12:25:58.438 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Found solution with objective value 3.1824000000000003
+12:25:58.500 [main] INFO  de.ohnes.App - Computed Solution with Objective value 25.4764139151131 in 57966ms
+12:25:58.502 [main] INFO  de.ohnes.App - Result: 8b7e97e3-0679-4a6e-81bb-b1e69f8e7f06, 41, 25, 57966, Algorithm3, 0.240000, 2.000000, 25.476414
+12:25:59.005 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+12:25:59.345 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+14:08:16.884 [main] INFO  de.ohnes.App - Starting Application!
+14:08:17.869 [main] INFO  de.ohnes.App - Running instance [n = 17; m = 10] with Algorithm2
+14:08:18.418 [main] INFO  de.ohnes.App - Computed Solution with Objective value 18.248122645420235 in 545ms
+14:08:18.438 [main] INFO  de.ohnes.App - Result: f106397f-4428-4fec-a114-37d3ae560e4d, 17, 10, 545, Algorithm2, 0.240000, 2.000000, 18.248123
+14:08:18.743 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+14:08:18.957 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+14:08:20.391 [main] INFO  de.ohnes.App - Starting Application!
+14:08:21.071 [main] INFO  de.ohnes.App - Running instance [n = 19; m = 11] with Algorithm2
+14:08:21.662 [main] INFO  de.ohnes.App - Computed Solution with Objective value 21.151352905886768 in 588ms
+14:08:21.663 [main] INFO  de.ohnes.App - Result: 5d10ab33-47b1-4ac4-9ba9-2e47bab61d7f, 19, 11, 588, Algorithm2, 0.240000, 2.000000, 21.151353
+14:08:21.900 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+14:08:22.090 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+14:08:23.490 [main] INFO  de.ohnes.App - Starting Application!
+14:08:24.129 [main] INFO  de.ohnes.App - Running instance [n = 21; m = 12] with Algorithm2
+14:08:25.914 [main] INFO  de.ohnes.App - Computed Solution with Objective value 22.005514234051596 in 1782ms
+14:08:25.915 [main] INFO  de.ohnes.App - Result: 74836385-5650-4b69-860d-54c246916a6b, 21, 12, 1782, Algorithm2, 0.240000, 2.000000, 22.005514
+14:08:26.134 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+14:08:26.331 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+14:08:27.746 [main] INFO  de.ohnes.App - Starting Application!
+14:08:28.413 [main] INFO  de.ohnes.App - Running instance [n = 25; m = 13] with Algorithm2
+14:08:36.483 [main] INFO  de.ohnes.App - Computed Solution with Objective value 25.078537663349554 in 8066ms
+14:08:36.487 [main] INFO  de.ohnes.App - Result: b4ebda9a-f570-4f60-aebe-9ffc686ebb60, 25, 13, 8066, Algorithm2, 0.240000, 2.000000, 25.078538
+14:08:36.732 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+14:08:36.936 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+14:08:38.378 [main] INFO  de.ohnes.App - Starting Application!
+14:08:39.026 [main] INFO  de.ohnes.App - Running instance [n = 25; m = 14] with Algorithm2
+14:08:46.089 [main] INFO  de.ohnes.App - Computed Solution with Objective value 26.23810129680882 in 7059ms
+14:08:46.091 [main] INFO  de.ohnes.App - Result: 513d897f-a591-48b2-b9e2-2296a3dd5a6f, 25, 14, 7059, Algorithm2, 0.240000, 2.000000, 26.238101
+14:08:46.307 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+14:08:46.510 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+14:08:47.934 [main] INFO  de.ohnes.App - Starting Application!
+14:08:48.600 [main] INFO  de.ohnes.App - Running instance [n = 24; m = 15] with Algorithm2
+14:08:53.675 [main] INFO  de.ohnes.App - Computed Solution with Objective value 29.3420812548376 in 5071ms
+14:08:53.678 [main] INFO  de.ohnes.App - Result: e0ae363d-e058-422a-a82d-45d1624cbed5, 24, 15, 5071, Algorithm2, 0.240000, 2.000000, 29.342081
+14:08:53.871 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+14:08:54.069 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+14:08:55.504 [main] INFO  de.ohnes.App - Starting Application!
+14:08:56.211 [main] INFO  de.ohnes.App - Running instance [n = 26; m = 16] with Algorithm2
+14:09:07.489 [main] INFO  de.ohnes.App - Computed Solution with Objective value 29.683600698132235 in 11274ms
+14:09:07.506 [main] INFO  de.ohnes.App - Result: a6c85a30-2b5d-4e0e-b75f-dd35341b13fe, 26, 16, 11274, Algorithm2, 0.240000, 2.000000, 29.683601
+14:09:07.706 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+14:09:07.900 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+14:09:09.337 [main] INFO  de.ohnes.App - Starting Application!
+14:09:09.976 [main] INFO  de.ohnes.App - Running instance [n = 28; m = 17] with Algorithm2
+14:09:22.235 [main] INFO  de.ohnes.App - Computed Solution with Objective value 33.20006183908177 in 12254ms
+14:09:22.238 [main] INFO  de.ohnes.App - Result: 9af3a533-7fa8-4dab-8c7c-75f69fd4bb94, 28, 17, 12254, Algorithm2, 0.240000, 2.000000, 33.200062
+14:09:22.481 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+14:09:22.677 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+14:09:24.094 [main] INFO  de.ohnes.App - Starting Application!
+14:09:24.753 [main] INFO  de.ohnes.App - Running instance [n = 31; m = 18] with Algorithm3
+14:09:25.241 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found 11520 configurations for the conf-LP
+14:09:25.975 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found solution to the LP with objective value: 11.313954851233598
+14:09:25.986 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - starting computation of States1.
+14:09:26.088 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 1, out of 4
+14:09:26.123 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 2, out of 4
+14:09:26.170 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 3, out of 4
+14:09:26.206 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 4, out of 4
+14:09:26.207 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Found solution with objective value 3.1032
+14:09:26.228 [main] INFO  de.ohnes.App - Computed Solution with Objective value 19.25577760580635 in 1475ms
+14:09:26.229 [main] INFO  de.ohnes.App - Result: 157a7665-523c-4335-9c07-659c3f94ec2e, 31, 18, 1475, Algorithm3, 0.240000, 2.000000, 19.255778
+14:09:26.531 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+14:09:26.686 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+14:09:28.071 [main] INFO  de.ohnes.App - Starting Application!
+14:09:28.722 [main] INFO  de.ohnes.App - Running instance [n = 29; m = 19] with Algorithm3
+14:09:29.104 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found 7680 configurations for the conf-LP
+14:09:29.406 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found solution to the LP with objective value: 11.846529716872803
+14:09:29.420 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - starting computation of States1.
+14:09:29.431 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 1, out of 1
+14:09:29.431 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Found solution with objective value 1.0
+14:09:29.440 [main] INFO  de.ohnes.App - Computed Solution with Objective value 18.326982984007955 in 717ms
+14:09:29.440 [main] INFO  de.ohnes.App - Result: 04287fe4-b710-494f-b68e-3213615cb386, 29, 19, 717, Algorithm3, 0.240000, 2.000000, 18.326983
+14:09:29.645 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+14:09:29.821 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+14:09:31.247 [main] INFO  de.ohnes.App - Starting Application!
+14:09:31.900 [main] INFO  de.ohnes.App - Running instance [n = 34; m = 20] with Algorithm3
+14:09:32.340 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found 14400 configurations for the conf-LP
+14:09:32.981 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found solution to the LP with objective value: 13.289248084852673
+14:09:33.000 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - starting computation of States1.
+14:09:33.089 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 1, out of 4
+14:09:33.121 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 2, out of 4
+14:09:33.134 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 3, out of 4
+14:09:33.172 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 4, out of 4
+14:09:33.172 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Found solution with objective value 3.0672
+14:09:33.182 [main] INFO  de.ohnes.App - Computed Solution with Objective value 20.02735913837678 in 1280ms
+14:09:33.182 [main] INFO  de.ohnes.App - Result: ef202ab7-508b-44f7-8533-16ffb188131c, 34, 20, 1280, Algorithm3, 0.240000, 2.000000, 20.027359
+14:09:33.513 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+14:09:33.691 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+14:09:35.149 [main] INFO  de.ohnes.App - Starting Application!
+14:09:35.812 [main] INFO  de.ohnes.App - Running instance [n = 32; m = 21] with Algorithm3
+14:09:36.273 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found 30720 configurations for the conf-LP
+14:09:37.741 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found solution to the LP with objective value: 13.939081969292102
+14:09:37.788 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - starting computation of States1.
+14:09:37.788 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 1, out of 1
+14:09:37.788 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Found solution with objective value 1.0
+14:09:37.817 [main] INFO  de.ohnes.App - Computed Solution with Objective value 24.006998052537433 in 2005ms
+14:09:37.818 [main] INFO  de.ohnes.App - Result: 305df3dc-0f9c-465c-90cf-9c5cf7338942, 32, 21, 2005, Algorithm3, 0.240000, 2.000000, 24.006998
+14:09:38.088 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+14:09:38.272 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+14:09:39.735 [main] INFO  de.ohnes.App - Starting Application!
+14:09:40.410 [main] INFO  de.ohnes.App - Running instance [n = 34; m = 22] with Algorithm3
+14:09:40.860 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found 49152 configurations for the conf-LP
+14:09:44.195 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found solution to the LP with objective value: 15.139131528642107
+14:09:44.220 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - starting computation of States1.
+14:11:37.405 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 1, out of 6
+14:14:13.636 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 2, out of 6
+14:18:39.056 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 3, out of 6
+14:34:12.977 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 4, out of 6
+15:38:51.653 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 5, out of 6
+17:58:18.605 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 6, out of 6
+17:58:18.606 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Found solution with objective value 5.153182629387269
+17:58:18.637 [main] INFO  de.ohnes.App - Computed Solution with Objective value 23.237583598262567 in 13718206ms
+17:58:18.638 [main] INFO  de.ohnes.App - Result: 710b9320-2770-4772-82f0-6010a603c27e, 34, 22, 13718206, Algorithm3, 0.240000, 2.000000, 23.237584
+17:58:18.858 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+17:58:19.033 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+17:58:22.503 [main] INFO  de.ohnes.App - Starting Application!
+17:58:23.188 [main] INFO  de.ohnes.App - Running instance [n = 38; m = 23] with Algorithm3
+17:58:23.653 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found 230400 configurations for the conf-LP
+17:58:43.422 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found solution to the LP with objective value: 16.139225531869197
+17:58:43.480 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - starting computation of States1.
+17:58:43.486 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 1, out of 3
+17:58:43.508 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 2, out of 3
+17:58:43.511 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 3, out of 3
+17:58:43.511 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Found solution with objective value 2.173010380622837
+17:58:43.522 [main] INFO  de.ohnes.App - Computed Solution with Objective value 26.283546752249993 in 20332ms
+17:58:43.522 [main] INFO  de.ohnes.App - Result: bdea6e34-2537-451b-b662-030dfb708ea7, 38, 23, 20332, Algorithm3, 0.240000, 2.000000, 26.283547
+17:58:43.943 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+17:58:44.208 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+17:58:45.724 [main] INFO  de.ohnes.App - Starting Application!
+17:58:46.367 [main] INFO  de.ohnes.App - Running instance [n = 41; m = 24] with Algorithm3
+17:58:46.846 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found 460800 configurations for the conf-LP
+17:59:17.039 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found solution to the LP with objective value: 17.917667720502603
+17:59:17.090 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - starting computation of States1.
+17:59:17.180 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 1, out of 4
+17:59:17.212 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 2, out of 4
+17:59:17.259 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 3, out of 4
+17:59:17.309 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 4, out of 4
+17:59:17.310 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Found solution with objective value 3.0671999999999997
+17:59:17.319 [main] INFO  de.ohnes.App - Computed Solution with Objective value 24.553253327063725 in 30951ms
+17:59:17.320 [main] INFO  de.ohnes.App - Result: e5026103-c89a-4084-8e08-a43e5ed0b1c2, 41, 24, 30951, Algorithm3, 0.240000, 2.000000, 24.553253
+17:59:17.640 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+17:59:17.806 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+17:59:19.222 [main] INFO  de.ohnes.App - Starting Application!
+17:59:19.889 [main] INFO  de.ohnes.App - Running instance [n = 42; m = 25] with Algorithm3
+17:59:20.352 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found 576000 configurations for the conf-LP
+18:00:11.686 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found solution to the LP with objective value: 18.63079332969973
+18:00:11.735 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - starting computation of States1.
+18:00:13.250 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 1, out of 6
+18:00:14.840 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 2, out of 6
+18:00:18.786 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 3, out of 6
+18:00:26.898 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 4, out of 6
+18:00:56.280 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 5, out of 6
+18:01:59.256 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 6, out of 6
+18:01:59.257 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Found solution with objective value 4.166629538872799
+18:01:59.271 [main] INFO  de.ohnes.App - Computed Solution with Objective value 27.952969665925533 in 159381ms
+18:01:59.300 [main] INFO  de.ohnes.App - Result: dd232828-074f-4d2e-8e8e-83f7ae44c48d, 42, 25, 159381, Algorithm3, 0.240000, 2.000000, 27.952970
+18:01:59.541 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+18:01:59.714 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+18:32:29.538 [main] INFO  de.ohnes.App - Starting Application!
+18:32:30.472 [main] INFO  de.ohnes.App - Running instance [n = 17; m = 10] with Algorithm2
+18:32:30.996 [main] INFO  de.ohnes.App - Computed Solution with Objective value 18.08061163148461 in 520ms
+18:32:30.997 [main] INFO  de.ohnes.App - Result: 9da3f721-0a3f-432d-a2fe-86ebb10719d5, 17, 10, 520, Algorithm2, 0.240000, 2.000000, 18.080612
+18:32:31.286 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+18:32:31.520 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+18:32:33.314 [main] INFO  de.ohnes.App - Starting Application!
+18:32:34.137 [main] INFO  de.ohnes.App - Running instance [n = 16; m = 11] with Algorithm2
+18:32:34.377 [main] INFO  de.ohnes.App - Computed Solution with Objective value 21.189627453646295 in 229ms
+18:32:34.378 [main] INFO  de.ohnes.App - Result: 1112bb06-bb4a-43f5-8f45-74d2bfd91f77, 16, 11, 229, Algorithm2, 0.240000, 2.000000, 21.189627
+18:32:34.669 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+18:32:34.898 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+18:32:36.663 [main] INFO  de.ohnes.App - Starting Application!
+18:32:37.507 [main] INFO  de.ohnes.App - Running instance [n = 20; m = 12] with Algorithm2
+18:32:38.376 [main] INFO  de.ohnes.App - Computed Solution with Objective value 21.551223149936916 in 865ms
+18:32:38.377 [main] INFO  de.ohnes.App - Result: d3b1c5c0-fb8c-4afc-b269-5b8883e7f2bc, 20, 12, 865, Algorithm2, 0.240000, 2.000000, 21.551223
+18:32:38.678 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+18:32:38.920 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+18:32:40.698 [main] INFO  de.ohnes.App - Starting Application!
+18:32:41.556 [main] INFO  de.ohnes.App - Running instance [n = 22; m = 13] with Algorithm2
+18:32:44.047 [main] INFO  de.ohnes.App - Computed Solution with Objective value 25.226849489711626 in 2473ms
+18:32:44.048 [main] INFO  de.ohnes.App - Result: 2ca3ee4f-07ed-4a1c-9bfe-0b1285e7dc6c, 22, 13, 2473, Algorithm2, 0.240000, 2.000000, 25.226849
+18:32:44.338 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+18:32:44.589 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+18:32:46.361 [main] INFO  de.ohnes.App - Starting Application!
+18:32:47.195 [main] INFO  de.ohnes.App - Running instance [n = 22; m = 14] with Algorithm2
+18:32:48.458 [main] INFO  de.ohnes.App - Computed Solution with Objective value 26.066499715937898 in 1259ms
+18:32:48.459 [main] INFO  de.ohnes.App - Result: 6f1bad34-6e65-4e5d-9e35-552825659c6a, 22, 14, 1259, Algorithm2, 0.240000, 2.000000, 26.066500
+18:32:48.726 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+18:32:48.966 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+18:32:50.743 [main] INFO  de.ohnes.App - Starting Application!
+18:32:51.557 [main] INFO  de.ohnes.App - Running instance [n = 22; m = 15] with Algorithm2
+18:32:52.915 [main] INFO  de.ohnes.App - Computed Solution with Objective value 29.156389551945974 in 1353ms
+18:32:52.930 [main] INFO  de.ohnes.App - Result: 0b2c0dda-d064-4083-a0d2-126179a57816, 22, 15, 1353, Algorithm2, 0.240000, 2.000000, 29.156390
+18:32:53.212 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+18:32:53.457 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+18:32:55.264 [main] INFO  de.ohnes.App - Starting Application!
+18:32:56.043 [main] INFO  de.ohnes.App - Running instance [n = 25; m = 16] with Algorithm2
+18:33:01.933 [main] INFO  de.ohnes.App - Computed Solution with Objective value 30.31354150698566 in 5870ms
+18:33:01.945 [main] INFO  de.ohnes.App - Result: 8833742c-8495-452f-866f-625e8ade49da, 25, 16, 5870, Algorithm2, 0.240000, 2.000000, 30.313542
+18:33:02.233 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+18:33:02.471 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+18:33:04.214 [main] INFO  de.ohnes.App - Starting Application!
+18:33:05.081 [main] INFO  de.ohnes.App - Running instance [n = 27; m = 17] with Algorithm2
+18:33:10.939 [main] INFO  de.ohnes.App - Computed Solution with Objective value 33.62603228678026 in 5838ms
+18:33:10.953 [main] INFO  de.ohnes.App - Result: f19eb1d0-2108-4c5d-934c-491fbf649711, 27, 17, 5838, Algorithm2, 0.240000, 2.000000, 33.626032
+18:33:11.219 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+18:33:11.463 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+18:33:13.230 [main] INFO  de.ohnes.App - Starting Application!
+18:33:14.065 [main] INFO  de.ohnes.App - Running instance [n = 30; m = 18] with Algorithm3
+18:33:14.630 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found 6144 configurations for the conf-LP
+18:33:14.932 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found solution to the LP with objective value: 10.379511879262392
+18:33:14.941 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - starting computation of States1.
+18:33:14.942 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 1, out of 1
+18:33:14.942 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Found solution with objective value 1.0
+18:33:14.957 [main] INFO  de.ohnes.App - Computed Solution with Objective value 19.5652339343547 in 891ms
+18:33:14.958 [main] INFO  de.ohnes.App - Result: 618413c2-b5e9-4603-8c27-94b2f869a5e9, 30, 18, 891, Algorithm3, 0.240000, 2.000000, 19.565234
+18:33:15.226 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+18:33:15.455 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+18:33:17.186 [main] INFO  de.ohnes.App - Starting Application!
+18:33:18.021 [main] INFO  de.ohnes.App - Running instance [n = 30; m = 19] with Algorithm3
+18:33:18.573 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found 14400 configurations for the conf-LP
+18:33:19.487 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found solution to the LP with objective value: 13.270206523592964
+18:33:19.495 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - starting computation of States1.
+18:33:19.496 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 1, out of 1
+18:33:19.496 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Found solution with objective value 1.0
+18:33:19.533 [main] INFO  de.ohnes.App - Computed Solution with Objective value 21.163770676108697 in 1511ms
+18:33:19.550 [main] INFO  de.ohnes.App - Result: 17914805-bdc7-43f8-8068-7b66e92a10c1, 30, 19, 1511, Algorithm3, 0.240000, 2.000000, 21.163771
+18:33:20.074 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+18:33:20.443 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+18:33:22.237 [main] INFO  de.ohnes.App - Starting Application!
+18:33:23.017 [main] INFO  de.ohnes.App - Running instance [n = 32; m = 20] with Algorithm3
+18:33:23.590 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found 15360 configurations for the conf-LP
+18:33:24.708 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found solution to the LP with objective value: 13.380197733768885
+18:33:24.745 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - starting computation of States1.
+18:33:24.854 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 1, out of 4
+18:33:24.948 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 2, out of 4
+18:33:25.040 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 3, out of 4
+18:33:25.173 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 4, out of 4
+18:33:25.173 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Found solution with objective value 3.1453287197231825
+18:33:25.195 [main] INFO  de.ohnes.App - Computed Solution with Objective value 20.02443721420867 in 2177ms
+18:33:25.196 [main] INFO  de.ohnes.App - Result: 849d09d3-6134-498b-81ba-a0b0ab1aeed2, 32, 20, 2177, Algorithm3, 0.240000, 2.000000, 20.024437
+18:33:25.693 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+18:33:26.025 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+18:33:27.774 [main] INFO  de.ohnes.App - Starting Application!
+18:33:28.589 [main] INFO  de.ohnes.App - Running instance [n = 34; m = 21] with Algorithm3
+18:33:29.141 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found 30720 configurations for the conf-LP
+18:33:31.399 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found solution to the LP with objective value: 13.053464336254805
+18:33:31.441 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - starting computation of States1.
+18:33:31.462 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 1, out of 1
+18:33:31.462 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Found solution with objective value 1.0
+18:33:31.480 [main] INFO  de.ohnes.App - Computed Solution with Objective value 24.293279556519426 in 2890ms
+18:33:31.487 [main] INFO  de.ohnes.App - Result: 33ee6d06-33e0-4758-94f0-9e620a22cef0, 34, 21, 2890, Algorithm3, 0.240000, 2.000000, 24.293280
+18:33:31.803 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+18:33:32.037 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+18:33:33.837 [main] INFO  de.ohnes.App - Starting Application!
+18:33:34.668 [main] INFO  de.ohnes.App - Running instance [n = 36; m = 22] with Algorithm3
+18:33:35.223 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found 76800 configurations for the conf-LP
+18:33:40.168 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found solution to the LP with objective value: 15.844317749019718
+18:33:40.210 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - starting computation of States1.
+18:33:40.211 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 1, out of 1
+18:33:40.211 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Found solution with objective value 1.0
+18:33:40.228 [main] INFO  de.ohnes.App - Computed Solution with Objective value 23.962207234559028 in 5559ms
+18:33:40.235 [main] INFO  de.ohnes.App - Result: 5fdecb13-753b-4d6b-9349-5b3f3b1a601c, 36, 22, 5559, Algorithm3, 0.240000, 2.000000, 23.962207
+18:33:40.504 [main] DEBUG de.ohnes.logging.MyElasticsearchClient - Trying to push test result to Elasticsearch...
+18:33:40.744 [main] WARN  de.ohnes.logging.MyElasticsearchClient - Couldn't reach ES Server. Saving data locally until next try.
+18:33:42.510 [main] INFO  de.ohnes.App - Starting Application!
+18:33:43.300 [main] INFO  de.ohnes.App - Running instance [n = 39; m = 23] with Algorithm3
+18:33:43.892 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found 192000 configurations for the conf-LP
+18:34:38.072 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm3 - Found solution to the LP with objective value: 14.955115746312853
+18:34:38.117 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - starting computation of States1.
+18:43:24.987 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 1, out of 7
+18:53:52.012 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 2, out of 7
+19:13:27.171 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 3, out of 7
+19:42:08.654 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 4, out of 7
+21:25:37.032 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 5, out of 7
+04:38:28.922 [main] DEBUG de.ohnes.AlgorithmicComponents.Algorithm1 - Computed set of States1 for n = 6, out of 7

@@ -48,10 +48,15 @@ public class App {
         LOGGER.info("Starting Application!");
         MyElasticsearchClient.makeConnection(ES_HOST);
         
-        int m = MIN_MACHINES;
-        while(m <= MAX_MACHINES) {   //run this loop until we run out of memory.
-            MyElasticsearchClient.pushData(ES_INDEX, runTest(m));
-            m++;
+        try {
+            int m = MIN_MACHINES;
+            while(m <= MAX_MACHINES) {   //run this loop until we run out of memory.
+                MyElasticsearchClient.pushData(ES_INDEX, runTest(m));
+                m++;
+            }
+
+        }catch(OutOfMemoryError e) {
+            LOGGER.error("Out of Memory Error! Stopping Application!");
         }
         System.exit(0);
         // LOGGER.info("END");
@@ -62,8 +67,10 @@ public class App {
         Algorithm algo;
         //just generate the transformed instance, since the generation has to be done for every algorithm anyway.
         Instance I = InstanceGenerator.generateTransformedInstance(m, m, EPSILON);
+        testResult.setEpsilon(EPSILON);
         testResult.setJobs(I.getN());
         testResult.setMachines(I.getM());
+        testResult.setQ(Q);
         if (I.getM() <= Math.sqrt(1 / EPSILON)) {
             //(m <= \sqrt{1/\epsilon})
             algo = ALGO1;
@@ -80,10 +87,13 @@ public class App {
         long startTime = System.currentTimeMillis();     //starting timer.
         algo.solve(I, EPSILON, Q);
         long endTime = System.currentTimeMillis(); 
-        
-        LOGGER.info("Computed Solution with Objective value {} in {}ms", I.getObjective(Q), (endTime - startTime));//ending timer.
 
         testResult.setMilliseconds(endTime - startTime);
+        testResult.setObjectiveValue(I.getObjective(Q));
+        
+        LOGGER.info("Computed Solution with Objective value {} in {}ms", testResult.getObjectiveValue(), testResult.getMilliseconds());//ending timer.
+        LOGGER.info("Result: {}", testResult.toString());
+
 
         return testResult;
     }

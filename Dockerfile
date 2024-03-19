@@ -9,9 +9,9 @@ ENV EPSILON "0.1"
 ENV Q 2
 ENV MIN_MACHINES 50
 ENV MAX_MACHINES 51
-ENV ELASTICSEARCH_HOST "localhost"
+ENV ES_HOST "localhost"
 ENV ES_INDEX "testdata-"
 
-COPY --from=build /src/target/SchedulingAlgorithms-1.0-SNAPSHOT-jar-with-dependencies.jar SchedulingAlgorithms.jar
+COPY --from=build --chmod=0777 /src/target/SchedulingAlgorithms-1.0-SNAPSHOT-jar-with-dependencies.jar /app/SchedulingAlgorithms.jar
 # use the Epslion ("noops") GC, because we want to measure the time of these algorithms.
-ENTRYPOINT ["java", "-jar", "SchedulingAlgorithms.jar", "-XX:+UnlockExperimentalVMOptions", "-XX:+UseEpsilonGC"]
+ENTRYPOINT ["java", "-jar", "-Xms4G", "-Xmx128G", "-Xss4m", "/app/SchedulingAlgorithms.jar"]

@@ -36,6 +36,7 @@ public class Algorithm3 implements Algorithm {
         Instance I_final = new Instance(new Job[0], new Machine[0]); //this intance will contain the jobs that are scheduled.
         
         if (I.getN() <= I.getM()) {
+            //the trivial case is not implemented, as we did not test it.
             //TODO trivial..
         }
         int temp_n = I.getN();
@@ -160,7 +161,7 @@ public class Algorithm3 implements Algorithm {
             //LP: solve
             // String model = solver.exportModelAsLpFormat();
             // System.out.println(model);
-          
+
             MPSolver.ResultStatus resultStatus = solver.solve();
             if (resultStatus == MPSolver.ResultStatus.OPTIMAL || resultStatus == MPSolver.ResultStatus.FEASIBLE) {
                 LOGGER.debug("Found solution to the LP with objective value: {}", objective.value());
@@ -227,7 +228,7 @@ public class Algorithm3 implements Algorithm {
         assert I.getM() != 0 || I.getN() == 0 : String.format("I has %d machines, but %d jobs.", I.getM(), I.getN());
         assert Arrays.stream(I.getJobs()).noneMatch(j -> Arrays.stream(I_final.getMachines()).anyMatch(m -> m.getJobs().contains(j)));
         //transform instance I to satisfy the needs of AL1 
-        TransformInstance.transformInstance(I, (int) (1 / epsilon)); //TODO check if 1 / epsilon is correct.
+        TransformInstance.transformInstance(I, (int) (1 / epsilon)); //the overall error is still at most epsilon.
         algo1.solve(I, epsilon, q);
         //Algorithm1 should assign all jobs.
         assert Arrays.stream(I.getJobs()).allMatch(j -> Arrays.stream(I.getMachines()).anyMatch(m -> m.getJobs().contains(j)));

@@ -4,12 +4,12 @@ services:
     # networks:
     #   - es-net
     environment:
-      - EPSILON=0.24
+      - EPSILON=0.01
       - MAX_MACHINES=20
       - MIN_MACHINES=2
       - Q=2
       - ES_HOST=192.168.178.101
-      - ES_INDEX=testresults
+      - ES_INDEX=chen-0.01
     # depends_on:
     #   elasticsearch:
     #     condition: service_healthy

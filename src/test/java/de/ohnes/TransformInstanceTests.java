@@ -12,7 +12,6 @@ import org.junit.runners.Parameterized;
 import de.ohnes.AlgorithmicComponents.TransformInstance;
 import de.ohnes.util.Instance;
 import de.ohnes.util.InstanceGenerator;
-import de.ohnes.util.Job;
 
 @RunWith(Parameterized.class)
 public class TransformInstanceTests {
@@ -50,6 +49,6 @@ public class TransformInstanceTests {
         // double sizeI = Arrays.stream(I.getJobs()).map(Job::getP).mapToDouble(Double::doubleValue).sum();
         assertTrue("Processing time of every job should be greater than epsilon", Arrays.stream(I.getJobs()).allMatch(j -> j.getP() >= this.epsilon*0.9));
         assertTrue("Processing time of every job should be less than 1", Arrays.stream(I.getJobs()).allMatch(j -> j.getP() <= 1.01));
-        // assertEquals("size(I) should equal m(I) after transformation", I.getM(), sizeI, 0.001);
+        // assertTrue("size(I) should equal m(I) after transformation", I.getM() == sizeI);
     }
 }
